@@ -14,7 +14,7 @@ public class Player : Entity
         direction = Vector2.zero;
     }
 
-    public  void Update()
+    public void Update()
     {
         base.Update();
 
