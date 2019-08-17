@@ -32,6 +32,7 @@ public class Entity : MonoBehaviour
 
         // No gravity in our sim
         RigidBody.gravityScale = 0;
+        RigidBody.freezeRotation = true;
     }
 
     public void Update()

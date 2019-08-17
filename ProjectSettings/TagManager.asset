@@ -13,19 +13,19 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - projectile
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Environment
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2212256425
+    locked: 0
+  - name: Environment
+    uniqueID: 2959904809
     locked: 0
