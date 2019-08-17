@@ -16,8 +16,9 @@ public class Entity : MonoBehaviour
     private float Speed;
     [SerializeField]
     protected Rigidbody2D RigidBody;
-
-    public GameObject target;
+    [SerializeField]
+    private float DampenDistance;
+    public Vector3 target;
 
     /* 
     *   The current in-game values of their staring counterparts.
@@ -47,16 +48,21 @@ public class Entity : MonoBehaviour
 
         // Standard movement logic for all entities
         Vector3 position = this.transform.position;
-        float dist;
+        float dist = 0;
         Vector2 direction = Vector2.zero;
         if (target != null)
         {
-            dist = Vector3.Distance(target.transform.position, position);
-            Debug.Log("Updating Direction");
-            direction = target.transform.position - this.transform.position;
+            dist = Vector3.Distance(target, position);
+            //Debug.Log("Updating Direction");
+            direction = target - position;
         }
-        Debug.Log("Direction is:");
-        Debug.Log(direction.ToString());
-        RigidBody.velocity = direction.normalized * gSpeed;
+        //Debug.Log("Direction is:");
+        //Debug.Log(direction.ToString());
+        float speed = gSpeed;
+        if (dist < DampenDistance)
+        {
+            speed /= 2;
+        }
+        RigidBody.velocity = direction.normalized * speed;
     }
 }
