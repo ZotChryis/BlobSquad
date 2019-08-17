@@ -17,6 +17,8 @@ public class Entity : MonoBehaviour
     [SerializeField]
     protected Rigidbody2D RigidBody;
 
+    public GameObject target;
+
     /* 
     *   The current in-game values of their staring counterparts.
     */
@@ -42,7 +44,18 @@ public class Entity : MonoBehaviour
             return;
         }
 
-        // TODO: Standard movement logic for all entities
-
+        // Standard movement logic for all entities
+        Vector3 position = this.transform.position;
+        float dist;
+        Vector2 direction = Vector2.zero;
+        if (target != null)
+        {
+            dist = Vector3.Distance(target.transform.position, position);
+            Debug.Log("Updating Direction");
+            direction = target.transform.position - this.transform.position;
+        }
+        Debug.Log("Direction is:");
+        Debug.Log(direction.ToString());
+        RigidBody.velocity = direction.normalized * gSpeed;
     }
 }
