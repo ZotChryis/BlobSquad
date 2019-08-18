@@ -53,18 +53,33 @@ public class ArmyManager : MonoBehaviour
         int entityIndex = 0;
         foreach (Entity ally in army)
         {
-            ally.target = playerPos + Offset(armySize,entityIndex,spacing);
+            ally.target = playerPos + Offset(armySize,entityIndex,spacing,spacing);
             entityIndex++;
         }
     }
 
-    public Vector2 Offset(int numUnits, int index, float spacing)
+    public Vector2 Offset(int numUnits, int index, float spacing, float minRadius)
     {
         float circumfrance = spacing * numUnits;
-        float radius = circumfrance / (2 * Mathf.PI);
-        float theta = 2 * Mathf.PI * index / numUnits;
-        float x = radius * Mathf.Sin(theta);
-        float y = radius * Mathf.Cos(theta);
+        float radius = Mathf.Max(circumfrance / (2 * Mathf.PI),minRadius);
+        float x;
+        float y;
+        if (radius >= minRadius + spacing)
+        {
+
+            int c1Boundary = (int)Mathf.Round(numUnits * 2 / 3);
+            int c1Size = c1Boundary - 1;
+            int c2Size = numUnits - c1Size;
+            if (c1Size + c2Size != numUnits) throw new System.Exception("someone tell nick he sucks at math");
+            if (index >= c1Boundary) return Offset(c2Size, index - c2Size, spacing, minRadius + spacing);
+            else return Offset(c1Size, index, spacing, minRadius);
+        }
+        else
+        {
+            float theta = 2 * Mathf.PI * index / numUnits;
+            x = radius * Mathf.Sin(theta);
+            y = radius * Mathf.Cos(theta);
+        }
         return new Vector3(x, y, 0.0f);
     }
 
