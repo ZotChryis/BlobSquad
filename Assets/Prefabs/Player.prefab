@@ -110,6 +110,8 @@ MonoBehaviour:
   MinDistance: 0
   BarHealth: {fileID: 5824288529030914572}
   TroopType: 0
+  AttackPrefab: {fileID: 1919084782091122239, guid: 9bd9c5a2968feec4184b56c7ea9585c4,
+    type: 3}
   isFriendly: 1
   Army: {fileID: 1207102012982243548}
 --- !u!50 &4025451016063800570

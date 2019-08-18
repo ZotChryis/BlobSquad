@@ -57,10 +57,15 @@ public class Player : Entity
         // do he atacc
         if (Input.GetButtonDown("Jump"))
         {
-            base.Attack();
+            Attack();
         }
     }
 
+    public override void Attack()
+    {
+        Attack attack = GameObject.Instantiate(this.AttackPrefab, transform).GetComponent<Attack>();
+        attack.FriendlyAttack = this.isFriendly;
+    }
     /*
     public void OnCollisionEnter2D(Collision2D collision)
     {
