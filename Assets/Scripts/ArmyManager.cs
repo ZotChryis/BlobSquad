@@ -6,7 +6,7 @@ public class ArmyManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private int ArmySize;
+    private int armySize;
 
     public GameObject player;
 
@@ -24,7 +24,7 @@ public class ArmyManager : MonoBehaviour
     {
         Entity[] army = this.gameObject.GetComponentsInChildren<Entity>();
         // get current army size
-        int armySize = army.Length;
+        armySize = army.Length;
         // get current player location
         Vector2 playerPos = player.transform.position;
         // tell army which positions to march to
