@@ -25,9 +25,10 @@ public class Entity : MonoBehaviour
     private float MinDistance;
     [SerializeField]
     private UIBar BarHealth;
+    [SerializeField]
+    private ArmyManager.Troop TroopType;
 
     public bool isFriendly;
-
 
     /* 
     *   The current in-game values of their staring counterparts.

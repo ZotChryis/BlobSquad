@@ -12,7 +12,17 @@ public class ArmyManager : MonoBehaviour
 
     [SerializeField]
     private float spacing;
-    
+
+    [SerializeField]
+    public GameObject[] ClassToPrefabMap;
+
+    public enum Troop
+    {
+        Knight = 0,
+        Archer = 1,
+        Wizard = 2,
+        // etc
+    }
 
     void Start()
     {
