@@ -15,10 +15,16 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private float Speed;
     [SerializeField]
+    private float AttackSpeed;
+    [SerializeField]
     protected Rigidbody2D RigidBody;
     [SerializeField]
     private float DampenDistance;
     public Vector2 target;
+    [SerializeField]
+    private float MinDistance;
+    public bool isFriendly;
+
 
     /* 
     *   The current in-game values of their staring counterparts.
@@ -53,8 +59,7 @@ public class Entity : MonoBehaviour
         if (target != null)
         {
             dist = Vector3.Distance(target, position);
-            //Debug.Log("Updating Direction");
-            direction = target - position;
+            if(dist > MinDistance) direction = target - position;
         }
         //Debug.Log("Direction is:");
         //Debug.Log(direction.ToString());
@@ -64,5 +69,27 @@ public class Entity : MonoBehaviour
             speed /= 2;
         }
         RigidBody.velocity = direction.normalized * speed;
+    }
+    
+    public void Wound(int damage)
+    {
+        gHealth -= damage;
+        if (gHealth <= 0) Die();
+    }
+
+    public void Die()
+    {
+        // play death noise
+        // play death poof animation
+        // if this is an enemy
+        if (!isFriendly)
+        {
+           // world manager.increment things killed, also tell enum class
+        }
+        if (this is Player)
+        {
+            // world manager.gameOgre
+        }
+        Destroy(this.gameObject);
     }
 }

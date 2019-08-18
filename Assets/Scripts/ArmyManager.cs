@@ -36,7 +36,6 @@ public class ArmyManager : MonoBehaviour
         }
     }
 
-
     public Vector2 Offset(int numUnits, int index, float spacing)
     {
         float circumfrance = spacing * numUnits;
