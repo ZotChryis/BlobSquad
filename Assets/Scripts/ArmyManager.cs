@@ -22,12 +22,17 @@ public class ArmyManager : MonoBehaviour
     [SerializeField]
     public GameObject[] ClassToPrefabMap;
 
+    [SerializeField]
+    private List<Entity> Castles;
+
     public enum Troop
     {
         Knight = 0,
         Archer = 1,
-        Wizard = 2,
         // etc
+
+        // This has to be the last one
+        Castle,
     }
 
     public void Start()
@@ -73,5 +78,15 @@ public class ArmyManager : MonoBehaviour
     {
         GameObject entity = GameObject.Instantiate(ClassToPrefabMap[(int)type], this.gameObject.transform);
         entity.transform.SetParent(this.gameObject.transform);
+    }
+
+    public void CastleDeath(Entity e)
+    {
+        Castles.Remove(e);
+        Debug.Log("CASTLE DESTROYED!");
+        if (Castles.Count == 0)
+        {
+            Debug.Log("YOU WIN!");
+        }
     }
 }

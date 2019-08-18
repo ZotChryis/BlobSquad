@@ -49,3 +49,4 @@ MonoBehaviour:
   ClassToPrefabMap:
   - {fileID: 1103184653723817325, guid: 2c76fe122fe553d45a2594a179a71d55, type: 3}
   - {fileID: 2833521800065472489, guid: 1fe66a16053460142aa9f4853a88c52f, type: 3}
+  - {fileID: 2833521800065472489, guid: 1fe66a16053460142aa9f4853a88c52f, type: 3}
