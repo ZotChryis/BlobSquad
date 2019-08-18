@@ -18,7 +18,7 @@ public class Entity : MonoBehaviour
     protected Rigidbody2D RigidBody;
     [SerializeField]
     private float DampenDistance;
-    public Vector3 target;
+    public Vector2 target;
 
     /* 
     *   The current in-game values of their staring counterparts.
@@ -47,7 +47,7 @@ public class Entity : MonoBehaviour
         }
 
         // Standard movement logic for all entities
-        Vector3 position = this.transform.position;
+        Vector2 position = this.transform.position;
         float dist = 0;
         Vector2 direction = Vector2.zero;
         if (target != null)

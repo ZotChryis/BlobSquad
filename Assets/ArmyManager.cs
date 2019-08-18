@@ -10,6 +10,8 @@ public class ArmyManager : MonoBehaviour
 
     public GameObject player;
 
+    
+
     void Start()
     {
         
@@ -18,9 +20,16 @@ public class ArmyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Entity[] army = this.gameObject.GetComponentsInChildren<Entity>();
         // get current army size
+        int armySize = army.Length;
         // get current player location
-        //player.transform.position;
+        Vector2 playerPos = player.transform.position;
         // tell army which positions to march to
+        int entityIndex = 0;
+        foreach (Entity ally in army)
+        {
+            ally.target = playerPos;
+        }
     }
 }
