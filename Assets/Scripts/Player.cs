@@ -30,10 +30,12 @@ public class Player : Entity
         if (Input.GetKey(KeyCode.W))
         {
             direction.y = 1;
+            animator.SetBool("Walking", true);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             direction.y = -1;
+            animator.SetBool("Walking", true);
         }
 
         // Similar locking between to Left/Right
