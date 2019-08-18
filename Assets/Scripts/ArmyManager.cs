@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -74,18 +75,22 @@ public class ArmyManager : MonoBehaviour
         // tell army which positions to march to
         int entityIndex = 0;
         // sort army
-
+        Array.Sort(army, delegate(Entity entity1, Entity entity2) {
+            if (entity1.IsMelee() == entity2.IsMelee()) return 0;
+            else if (entity1.IsMelee() && !entity2.IsMelee()) return 1;
+            else return -1;
+        });
         // then update positions
         foreach (Entity ally in army)
         {
-            ally.target = playerPos + Offset(armySize,entityIndex, currentSpacing, 1);
+            ally.target = playerPos + Offset(armySize,entityIndex, currentSpacing, currentSpacing);
             entityIndex++;
         }
     }
 
     public Vector2 Offset(int numUnits, int index, float spacingLimit, float baseRadius)
     {
-        if (spacingLimit == 0) throw new System.Exception("need a spacing limit set");
+        if (spacingLimit == 0) spacingLimit = 0.5f; // throw new System.Exception("need a spacing limit set");
         float circumference = 2 * Mathf.PI * baseRadius;
         int unitCap = 0;
         float totalArc = 0f;
