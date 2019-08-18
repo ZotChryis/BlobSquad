@@ -10,6 +10,8 @@ public class ArmyManager : MonoBehaviour
 
     public GameObject player;
 
+    [SerializeField]
+    private float spacing;
     
 
     void Start()
@@ -29,7 +31,20 @@ public class ArmyManager : MonoBehaviour
         int entityIndex = 0;
         foreach (Entity ally in army)
         {
-            ally.target = playerPos;
+            ally.target = playerPos + Offset(armySize,entityIndex,spacing);
+            entityIndex++;
         }
     }
+
+
+    Vector2 Offset(int numUnits, int index, float spacing)
+    {
+        float circumfrance = spacing * numUnits;
+        float radius = circumfrance / (2 * Mathf.PI);
+        float theta = 2 * Mathf.PI * index / numUnits;
+        float x = radius * Mathf.Sin(theta);
+        float y = radius * Mathf.Cos(theta);
+        return new Vector3(x, y, 0.0f);
+    }
+
 }
