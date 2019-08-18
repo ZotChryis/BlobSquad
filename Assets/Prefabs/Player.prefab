@@ -183,9 +183,12 @@ MonoBehaviour:
   Health: 10
   Energy: 0
   Speed: 5
+  AttackSpeed: 1
   RigidBody: {fileID: 4025451016063800570}
   DampenDistance: 0
   target: {x: 0, y: 0}
+  MinDistance: 0
+  isFriendly: 1
   Army: {fileID: 3533906427734738331, guid: 6cdbf2b242adb244cbcfa8d39b451c12, type: 3}
 --- !u!50 &4025451016063800570
 Rigidbody2D:
