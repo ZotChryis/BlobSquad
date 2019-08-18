@@ -16,7 +16,7 @@ public class UIBar : MonoBehaviour
 
     public void Start()
     {
-        SetPercent(0.25f);
+        SetPercent(1f);
     }
 
     public void SetPercent(float percent)

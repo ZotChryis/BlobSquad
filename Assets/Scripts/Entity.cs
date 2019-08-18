@@ -23,6 +23,9 @@ public class Entity : MonoBehaviour
     public Vector2 target;
     [SerializeField]
     private float MinDistance;
+    [SerializeField]
+    private UIBar BarHealth;
+
     public bool isFriendly;
 
 
@@ -74,6 +77,7 @@ public class Entity : MonoBehaviour
     public void Wound(int damage)
     {
         gHealth -= damage;
+        BarHealth.SetPercent(gHealth / Health);
         if (gHealth <= 0) Die();
     }
 
