@@ -12,7 +12,7 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private float Health;
     [SerializeField]
-    private float Energy;
+    protected float Charisma;
     [SerializeField]
     private float Speed;
     [SerializeField]
@@ -27,6 +27,8 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private UIBar BarHealth;
     [SerializeField]
+    protected UIBar BarCharisma;
+    [SerializeField]
     private ArmyManager.Troop TroopType;
     [SerializeField]
     protected GameObject AttackPrefab;
@@ -37,14 +39,19 @@ public class Entity : MonoBehaviour
     *   The current in-game values of their staring counterparts.
     */
     protected float gHealth;
-    protected float gEnergy;
+    protected float gCharisma;
     protected float gSpeed;
     protected Spawner gSpawner;
 
     public void Start()
     {
         gHealth = Health;
-        gEnergy = Energy;
+        BarHealth.SetPercent(gHealth / Health);
+        gCharisma = 0;
+        if (BarCharisma != null)
+        {
+            BarCharisma.SetPercent(gCharisma / Charisma);
+        }
         gSpeed = Speed;
 
         // No gravity in our sim
@@ -72,7 +79,7 @@ public class Entity : MonoBehaviour
         if (target != null)
         {
             dist = Vector3.Distance(target, position);
-            if(dist > MinDistance) direction = target - position;
+            if (dist > MinDistance) direction = target - position;
         }
         //Debug.Log("Direction is:");
         //Debug.Log(direction.ToString());
@@ -83,7 +90,7 @@ public class Entity : MonoBehaviour
         }
         RigidBody.velocity = direction.normalized * speed;
     }
-    
+
     public void Wound(int damage)
     {
         gHealth -= damage;
@@ -108,7 +115,7 @@ public class Entity : MonoBehaviour
         // if this is an enemy
         else if (!isFriendly)
         {
-            ArmyManager.Get().AddUnit(TroopType);
+            Player.Get().AddCharisma(1, TroopType);
         }
 
         if (this is Player)

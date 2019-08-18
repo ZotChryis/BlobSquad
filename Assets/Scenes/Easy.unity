@@ -267,6 +267,11 @@ PrefabInstance:
       propertyPath: spacing
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7582249163496342634, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e1fdc945193a374aa60702898c7e384, type: 3}
 --- !u!1 &258809826 stripped

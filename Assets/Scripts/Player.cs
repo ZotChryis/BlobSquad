@@ -7,12 +7,19 @@ public class Player : Entity
     [SerializeField]
     private ArmyManager Army;
 
+    public static Player Get()
+    {
+        return m_instance;
+    }
+    private static Player m_instance;
+
     private Vector2 movement;
     private Vector2 direction;
     private Animator animator;
 
     public void Start()
     {
+        m_instance = this;
         base.Start();
         movement = Vector2.zero;
         direction = Vector2.zero;
@@ -66,6 +73,19 @@ public class Player : Entity
         Attack attack = GameObject.Instantiate(this.AttackPrefab, transform).GetComponent<Attack>();
         attack.FriendlyAttack = this.isFriendly;
     }
+
+    public void AddCharisma(int amount, ArmyManager.Troop type)
+    {
+        gCharisma += amount;
+        if (gCharisma >= Charisma)
+        {
+            // we have enough to recruit!
+            gCharisma -= Charisma;
+            ArmyManager.Get().AddUnit(type);
+        }
+        BarCharisma.SetPercent(gCharisma / Charisma);
+    }
+
     /*
     public void OnCollisionEnter2D(Collision2D collision)
     {
