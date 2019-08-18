@@ -17,8 +17,6 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private float Speed;
     [SerializeField]
-    private float AttackSpeed;
-    [SerializeField]
     protected Rigidbody2D RigidBody;
     [SerializeField]
     private float DampenDistance;
@@ -41,6 +39,9 @@ public class Entity : MonoBehaviour
     [SerializeField]
     protected string[] RecruitMessages;
 
+    [SerializeField]
+    protected float AttackRate;
+
     public bool isFriendly;
 
     /* 
@@ -50,9 +51,14 @@ public class Entity : MonoBehaviour
     protected float gCharisma;
     protected float gSpeed;
     protected Spawner gSpawner;
+    protected Vector2 direction;
+    protected Vector2 facing;
+    protected float lastAttackTime;
+    protected bool canAttack;
 
     public void Start()
     {
+        canAttack = true;
         gHealth = Health;
         BarHealth.SetPercent(gHealth / Health);
         gCharisma = 0;
@@ -74,18 +80,33 @@ public class Entity : MonoBehaviour
 
     public void Update()
     {
+        // Tell everything if they can attack now
+        if (!canAttack && Time.time - lastAttackTime >= AttackRate)
+        {
+            canAttack = true;
+        }
+
         // The player class will handle player movement.
         if (this is Player || this.TroopType == ArmyManager.Troop.Castle)
         {
             return;
+        }  
+
+        if (canAttack)
+        {
+            Attack();
         }
 
         // Standard movement logic for all entities
         Vector2 position = this.transform.position;
         float dist = 0;
-        Vector2 direction = Vector2.zero;
+        direction = Vector2.zero;
         if (target != null)
         {
+            // we only use facing for attack direction for now
+            // we want this to be opposite the angle to player
+            facing = Vector3.Normalize(target - position);
+
             dist = Vector3.Distance(target, position);
             if (dist > MinDistance) direction = target - position;
         }
@@ -99,6 +120,16 @@ public class Entity : MonoBehaviour
         RigidBody.velocity = direction.normalized * speed;
     }
 
+    public bool IsMelee()
+    {
+        return TroopType == ArmyManager.Troop.Knight;
+    }
+
+    public bool IsRanged()
+    {
+        return TroopType == ArmyManager.Troop.Archer;
+    }
+
     public void Wound(int damage)
     {
         gHealth -= damage;
@@ -106,8 +137,14 @@ public class Entity : MonoBehaviour
         if (gHealth <= 0) Die();
     }
 
-    public virtual void Attack()
+    public void Attack()
     {
+        canAttack = false;
+        lastAttackTime = Time.time;
+        Attack attack = GameObject.Instantiate(this.AttackPrefab, transform).GetComponent<Attack>();
+        attack.FriendlyAttack = this.isFriendly;
+        attack.direction = direction;
+        attack.facing = facing;
     }
 
     public void Die()

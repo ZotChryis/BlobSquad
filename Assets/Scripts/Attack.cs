@@ -10,6 +10,7 @@ public class Attack : MonoBehaviour
     [SerializeField]
     public bool FriendlyAttack;
     public Vector2 direction;
+    public Vector2 facing;
     [SerializeField]
     private float AttackDuration;
     public int Damage;
@@ -27,23 +28,48 @@ public class Attack : MonoBehaviour
             angle = Mathf.Deg2Rad*angle; //+ Mathf.PI/2;
             direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
         }
+
+        // Add color for friendly attack/enemy so we can tell for now
+        GetComponent<SpriteRenderer>().color = FriendlyAttack
+            ? Color.green
+            : Color.red;
     }
 
     void Update()
     {
+        // Make sure we kill ourselves if the attack duration expires
         elapsedTime += Time.deltaTime;
         if (elapsedTime > AttackDuration)
         {
             GameObject.Destroy(this.gameObject);
+            return;
         }
-        else
+
+        // Otherwise, update logic specific to our type
+        switch(atktype)
         {
-            if (atktype == AttackType.Chakram)
-            {
-                this.transform.Rotate(Vector3.forward * 6);
-                this.transform.Translate(direction / 12);
-            }
+            case AttackType.Chakram:
+                UpdateChakram();
+                break;
+            case AttackType.Sword:
+                UpdateSword();
+                break;
         }
+    }
+
+    public void UpdateChakram()
+    {
+        this.transform.Rotate(Vector3.forward * 6);
+        this.transform.Translate(direction / 12);
+    }
+
+    public void UpdateSword()
+    {
+        // Rotate the swipe a little
+        this.transform.Rotate(Vector3.forward / 2);
+
+        // Move the sword swipe forward a bit
+        this.transform.Translate(facing / 100);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
