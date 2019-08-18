@@ -19,6 +19,8 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private float DampenDistance;
     public Vector2 target;
+    [SerializeField]
+    private float MinDistance;
 
     /* 
     *   The current in-game values of their staring counterparts.
@@ -53,8 +55,7 @@ public class Entity : MonoBehaviour
         if (target != null)
         {
             dist = Vector3.Distance(target, position);
-            //Debug.Log("Updating Direction");
-            direction = target - position;
+            if(dist > MinDistance) direction = target - position;
         }
         //Debug.Log("Direction is:");
         //Debug.Log(direction.ToString());
