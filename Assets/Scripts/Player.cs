@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    [SerializeField]
+    private ArmyManager Army;
+
     private Vector2 movement;
     private Vector2 direction;
 
@@ -41,5 +44,16 @@ public class Player : Entity
         }
 
         RigidBody.velocity = direction * gSpeed;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Did we collide with an entity?
+        Entity entity = collision.collider.gameObject.GetComponent<Entity>();
+        if (entity != null)
+        {
+            // Add them to our army!
+            Army.AddUnit(entity);
+        }
     }
 }

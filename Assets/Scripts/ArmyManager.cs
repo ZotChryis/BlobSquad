@@ -37,7 +37,7 @@ public class ArmyManager : MonoBehaviour
     }
 
 
-    Vector2 Offset(int numUnits, int index, float spacing)
+    public Vector2 Offset(int numUnits, int index, float spacing)
     {
         float circumfrance = spacing * numUnits;
         float radius = circumfrance / (2 * Mathf.PI);
@@ -47,4 +47,8 @@ public class ArmyManager : MonoBehaviour
         return new Vector3(x, y, 0.0f);
     }
 
+    public void AddUnit(Entity entity)
+    {
+        entity.gameObject.transform.SetParent(this.gameObject.transform);
+    }
 }
