@@ -37,6 +37,7 @@ public class Entity : MonoBehaviour
     protected float gHealth;
     protected float gEnergy;
     protected float gSpeed;
+    protected Spawner gSpawner;
 
     public void Start()
     {
@@ -114,27 +115,21 @@ public class Entity : MonoBehaviour
 
         if (this is Player)
         {
-            //StartCoroutine(GameOver());
+            // TODO: Game over
             SceneManager.LoadScene("Victory", LoadSceneMode.Single);
         }
+
+        // Inform the spawner we came from that we perished!
+        if (gSpawner != null)
+        {
+            this.gSpawner.OnEntityDeath(this);
+        }   
 
         Destroy(this.gameObject);
     }
 
-
-
-
-
-
-
-
-    // TODO: Move this to some other class, for now its easier to have it here
-    public IEnumerator GameOver()
+    public void SetSpawner(Spawner s)
     {
-        SceneManager.LoadScene("Victory", LoadSceneMode.Additive);
-
-        yield return new WaitForSeconds(1f);
-
-        SceneManager.UnloadSceneAsync("SampleScene");
+        this.gSpawner = s;
     }
 }

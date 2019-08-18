@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private int Capacity;
 
-    private float lastSpawn = 0;
+    private float tickTime = 0;
     private List<GameObject> spawned = new List<GameObject>();
 
     public void Update()
@@ -23,12 +23,22 @@ public class Spawner : MonoBehaviour
             return;
         }
 
-        if (Time.time - lastSpawn >= Rate)
+        // only tick spawn rate if we have room
+        tickTime += Time.deltaTime;
+
+        if (tickTime >= Rate)
         {
-            lastSpawn = Time.time;
+            tickTime = 0;
             GameObject spawn = GameObject.Instantiate(Spawnables[Random.Range(0, Spawnables.Length)]);
             spawn.transform.position = this.transform.position;
             spawned.Add(spawn);
+
+            spawn.GetComponent<Entity>().SetSpawner(this);
         }
+    }
+
+    public void OnEntityDeath(Entity e)
+    {
+        this.spawned.Remove(e.gameObject);
     }
 }
