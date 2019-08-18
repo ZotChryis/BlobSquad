@@ -56,7 +56,7 @@ public class Entity : MonoBehaviour
     public void Update()
     {
         // The player class will handle player movement.
-        if (this is Player)
+        if (this is Player || this.TroopType == ArmyManager.Troop.Castle)
         {
             return;
         }
@@ -85,6 +85,14 @@ public class Entity : MonoBehaviour
         gHealth -= damage;
         BarHealth.SetPercent(gHealth / Health);
         if (gHealth <= 0) Die();
+    }
+
+    public void Attack()
+    {
+        Attack attack = this.GetComponentInChildren<Attack>();
+        Debug.Log(attack.ToString());
+
+        attack.gameObject.SetActive(false);
     }
 
     public void Die()

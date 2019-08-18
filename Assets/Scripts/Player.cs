@@ -53,6 +53,12 @@ public class Player : Entity
         }
 
         RigidBody.velocity = direction * gSpeed;
+
+        // do he atacc
+        if (Input.GetButtonDown("Jump"))
+        {
+            base.Attack();
+        }
     }
 
     /*
