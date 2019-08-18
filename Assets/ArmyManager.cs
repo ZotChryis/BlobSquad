@@ -7,6 +7,9 @@ public class ArmyManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private int ArmySize;
+
+    public GameObject player;
+
     void Start()
     {
         
@@ -17,6 +20,7 @@ public class ArmyManager : MonoBehaviour
     {
         // get current army size
         // get current player location
+        //player.transform.position;
         // tell army which positions to march to
     }
 }
