@@ -307,10 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6939af13b9bbded478acb9681c165a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
-  Charisma: 5
+  Health: 25
+  Charisma: 1
   Speed: 5
-  AttackSpeed: 1
   RigidBody: {fileID: 4025451016063800570}
   DampenDistance: 0
   target: {x: 0, y: 0}
@@ -328,6 +327,7 @@ MonoBehaviour:
   - We shall take the king down!
   - One of us...
   - It's a party now!
+  AttackRate: 1
   isFriendly: 1
   Army: {fileID: 1207102012982243548}
 --- !u!50 &4025451016063800570

@@ -144,16 +144,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72066caeafd6d345a9c98d194c6bc6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
-  Energy: 100
+  Health: 50
+  Charisma: 0
   Speed: 0
-  AttackSpeed: 0
   RigidBody: {fileID: 5922138668294879035}
   DampenDistance: 0
   target: {x: 0, y: 0}
   MinDistance: 0
   BarHealth: {fileID: 4363887079203462214}
+  BarCharisma: {fileID: 0}
   TroopType: 2
+  AttackPrefab: {fileID: 0}
+  SpeechBubble: {fileID: 0}
+  SpeechText: {fileID: 0}
+  RecruitMessages: []
+  AttackRate: 0
   isFriendly: 0
 --- !u!1 &7607596335416007584
 GameObject:

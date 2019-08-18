@@ -216,7 +216,7 @@ PrefabInstance:
         type: 3}
       propertyPath: AttackPrefab
       value: 
-      objectReference: {fileID: 4801818203748695028, guid: e2bda6aec8f6ab84985a8c955efa2e63,
+      objectReference: {fileID: 4801818203748695028, guid: 92d47c57e8f9fa1429c3358f9555d028,
         type: 3}
     - target: {fileID: 519420032, guid: 8e1fdc945193a374aa60702898c7e384, type: 3}
       propertyPath: m_RootOrder
@@ -271,6 +271,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945015566457697655, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687724388603471055, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e1fdc945193a374aa60702898c7e384, type: 3}
@@ -370,6 +380,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051803977943553448, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Capacity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051803977943553448, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Rate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376733620551130943, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Rate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376733620551130943, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Capacity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376733621272223899, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Rate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376733621272223899, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Capacity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002724343619607624, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002724343619607624, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Capacity
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8130503120656743862, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436490329374104525, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: Rate
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8865b2321942c0f4982a4c2e3e328b4d, type: 3}

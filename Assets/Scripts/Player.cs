@@ -14,11 +14,11 @@ public class Player : Entity
     private static Player m_instance;
 
     private Vector2 movement;
-    private Vector2 direction;
     private Animator animator;
 
     public void Start()
     {
+        facing = new Vector2(1, 0);
         m_instance = this;
         base.Start();
         movement = Vector2.zero;
@@ -59,10 +59,15 @@ public class Player : Entity
             animator.SetBool("Walking", true);
         }
 
-        RigidBody.velocity = direction * gSpeed;
+        if (direction != Vector2.zero)
+        {
+            facing = direction;
+        }
+
+        RigidBody.velocity = direction.normalized * gSpeed;
 
         // do he atacc
-        if (Input.GetButtonDown("Jump"))
+        if (canAttack && Input.GetButtonDown("Jump"))
         {
             Attack();
         }
@@ -70,13 +75,6 @@ public class Player : Entity
         {
             Army.AddUnit(ArmyManager.Troop.Knight);
         }
-    }
-
-    public override void Attack()
-    {
-        Attack attack = GameObject.Instantiate(this.AttackPrefab, transform).GetComponent<Attack>();
-        attack.FriendlyAttack = this.isFriendly;
-        attack.direction = direction;
     }
 
     public void AddCharisma(int amount, ArmyManager.Troop type)
