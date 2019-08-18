@@ -28,6 +28,8 @@ public class Entity : MonoBehaviour
     private UIBar BarHealth;
     [SerializeField]
     private ArmyManager.Troop TroopType;
+    [SerializeField]
+    protected GameObject AttackPrefab;
 
     public bool isFriendly;
 
@@ -88,12 +90,8 @@ public class Entity : MonoBehaviour
         if (gHealth <= 0) Die();
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
-        Attack attack = this.gameObject.GetComponentInChildren<Attack>(true);
-        Debug.Log(attack.ToString());
-
-        attack.gameObject.SetActive(true);
     }
 
     public void Die()
