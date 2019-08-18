@@ -46,6 +46,7 @@ public class Player : Entity
         RigidBody.velocity = direction * gSpeed;
     }
 
+    /*
     public void OnCollisionEnter2D(Collision2D collision)
     {
         // Did we collide with an entity?
@@ -56,4 +57,5 @@ public class Player : Entity
             Army.AddUnit(entity);
         }
     }
+    */
 }

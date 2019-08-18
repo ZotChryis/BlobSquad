@@ -36,7 +36,12 @@ PrefabInstance:
     - target: {fileID: 1499068415537142782, guid: ed7582916f06f714a8d61bf4c37431fe,
         type: 3}
       propertyPath: m_Name
-      value: Archer
+      value: Archer Ally
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499068415537142782, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1499068415537142777, guid: ed7582916f06f714a8d61bf4c37431fe,
         type: 3}
@@ -97,11 +102,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f2257a6202ace8e43a4e19f497cc8a4a,
+      objectReference: {fileID: 21300000, guid: fb7fb0fc71458f3408e18bcd70b7016d,
         type: 3}
     - target: {fileID: 1499068415537142779, guid: ed7582916f06f714a8d61bf4c37431fe,
         type: 3}
       propertyPath: TroopType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499068415537142779, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: isFriendly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499068415537142779, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499068415537142779, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: DampenDistance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2040218984937023858, guid: ed7582916f06f714a8d61bf4c37431fe,
@@ -124,6 +144,27 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2040218984937023859, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040218984333476125, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040218984621081865, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040218984333476123, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17517a6e22d4ebb4db99c26ac0a86058,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 1499068415537142781, guid: ed7582916f06f714a8d61bf4c37431fe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed7582916f06f714a8d61bf4c37431fe, type: 3}

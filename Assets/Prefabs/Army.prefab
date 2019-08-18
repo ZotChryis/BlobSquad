@@ -47,5 +47,5 @@ MonoBehaviour:
   player: {fileID: 6723950158791630334, guid: 8e1fdc945193a374aa60702898c7e384, type: 3}
   spacing: 1
   ClassToPrefabMap:
-  - {fileID: 1499068415537142782, guid: ed7582916f06f714a8d61bf4c37431fe, type: 3}
+  - {fileID: 1103184653723817325, guid: 2c76fe122fe553d45a2594a179a71d55, type: 3}
   - {fileID: 2833521800065472489, guid: 1fe66a16053460142aa9f4853a88c52f, type: 3}

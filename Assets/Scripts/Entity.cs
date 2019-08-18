@@ -89,7 +89,7 @@ public class Entity : MonoBehaviour
         // if this is an enemy
         if (!isFriendly)
         {
-           // world manager.increment things killed, also tell enum class
+            ArmyManager.Get().AddUnit(TroopType);
         }
         if (this is Player)
         {
