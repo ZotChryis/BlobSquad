@@ -36,7 +36,12 @@ public class ArmyManager : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD:Assets/ArmyManager.cs
     Vector2 Offset(int numUnits, int index, float spacing)
+=======
+
+    public Vector2 Offset(int numUnits, int index, float spacing)
+>>>>>>> 7fdc3be3d1711f7bcb5bbff82cc42ff818978c2c:Assets/Scripts/ArmyManager.cs
     {
         float circumfrance = spacing * numUnits;
         float radius = circumfrance / (2 * Mathf.PI);
@@ -46,4 +51,8 @@ public class ArmyManager : MonoBehaviour
         return new Vector3(x, y, 0.0f);
     }
 
+    public void AddUnit(Entity entity)
+    {
+        entity.gameObject.transform.SetParent(this.gameObject.transform);
+    }
 }
