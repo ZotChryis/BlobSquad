@@ -83,8 +83,9 @@ public class Player : Entity
             // we have enough to recruit!
             gCharisma -= Charisma;
             ArmyManager.Get().AddUnit(type);
+            Speak(RecruitMessages[Random.Range(0, RecruitMessages.Length)], 1.5f);
         }
-        BarCharisma.SetPercent(gCharisma / Charisma);
+        BarCharisma.SetPercent(gCharisma / Charisma);        
     }
 
     /*

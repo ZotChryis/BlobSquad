@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Entity : MonoBehaviour
 {
@@ -32,6 +33,13 @@ public class Entity : MonoBehaviour
     private ArmyManager.Troop TroopType;
     [SerializeField]
     protected GameObject AttackPrefab;
+
+    [SerializeField]
+    protected GameObject SpeechBubble;
+    [SerializeField]
+    protected TextMeshPro SpeechText;
+    [SerializeField]
+    protected string[] RecruitMessages;
 
     public bool isFriendly;
 
@@ -136,5 +144,18 @@ public class Entity : MonoBehaviour
     public void SetSpawner(Spawner s)
     {
         this.gSpawner = s;
+    }
+
+    public void Speak(string text, float duration)
+    {
+        SpeechBubble.SetActive(true);
+        SpeechText.text = text;
+        StartCoroutine(StopSpeak(duration));
+    }
+
+    public IEnumerator StopSpeak(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        SpeechBubble.SetActive(false);
     }
 }
