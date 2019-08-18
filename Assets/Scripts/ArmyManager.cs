@@ -61,7 +61,7 @@ public class ArmyManager : MonoBehaviour
         // then update positions
         foreach (Entity ally in army)
         {
-            ally.target = playerPos + Offset(armySize,entityIndex,spacing,1);
+            ally.target = playerPos + Offset(armySize,entityIndex,spacing,spacing);
             entityIndex++;
         }
     }
