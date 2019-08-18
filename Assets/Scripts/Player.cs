@@ -73,7 +73,8 @@ public class Player : Entity
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            Army.AddUnit(ArmyManager.Troop.Knight);
+            if (Random.Range(0f, 1f) > 0.5f) Army.AddUnit(ArmyManager.Troop.Knight);
+            else Army.AddUnit(ArmyManager.Troop.Archer);
         }
     }
 
