@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ArmyManager : MonoBehaviour
 {
@@ -76,6 +77,7 @@ public class ArmyManager : MonoBehaviour
     // Adds a new game object of the given troop type to the army
     public void AddUnit(Troop type)
     {
+        // TODO: Check to see if this mapping exists first. #YOLO
         GameObject entity = GameObject.Instantiate(ClassToPrefabMap[(int)type], this.gameObject.transform);
         entity.transform.SetParent(this.gameObject.transform);
     }
@@ -87,6 +89,7 @@ public class ArmyManager : MonoBehaviour
         if (Castles.Count == 0)
         {
             Debug.Log("YOU WIN!");
+            SceneManager.LoadScene("Victory", LoadSceneMode.Single);
         }
     }
 }
