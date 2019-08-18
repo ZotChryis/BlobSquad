@@ -66,6 +66,10 @@ public class Player : Entity
         {
             Attack();
         }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Army.AddUnit(ArmyManager.Troop.Knight);
+        }
     }
 
     public override void Attack()

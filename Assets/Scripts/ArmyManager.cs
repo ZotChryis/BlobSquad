@@ -51,37 +51,49 @@ public class ArmyManager : MonoBehaviour
         Vector2 playerPos = player.transform.position;
         // tell army which positions to march to
         int entityIndex = 0;
+        // sort army
+
+        // then update positions
         foreach (Entity ally in army)
         {
-            ally.target = playerPos + Offset(armySize,entityIndex,spacing,spacing);
+            ally.target = playerPos + Offset(armySize,entityIndex,spacing,1);
             entityIndex++;
         }
     }
 
-    public Vector2 Offset(int numUnits, int index, float spacing, float minRadius)
-    {
-        float circumfrance = spacing * numUnits;
-        float radius = Mathf.Max(circumfrance / (2 * Mathf.PI),minRadius);
-        float x;
-        float y;
-        if (radius >= minRadius + spacing)
-        {
 
-            int c1Boundary = (int)Mathf.Round(numUnits * 2 / 3);
-            int c1Size = c1Boundary - 1;
-            int c2Size = numUnits - c1Size;
-            if (c1Size + c2Size != numUnits) throw new System.Exception("someone tell nick he sucks at math");
-            if (index >= c1Boundary) return Offset(c2Size, index - c2Size, spacing, minRadius + spacing);
-            else return Offset(c1Size, index, spacing, minRadius);
+
+    public Vector2 Offset(int numUnits, int index, float spacingLimit, float baseRadius)
+    {
+        if (spacingLimit == 0) throw new System.Exception("need a spacing limit set");
+        float circumference = 2 * Mathf.PI * baseRadius;
+        int unitCap = 0;
+        float totalArc = 0f;
+        while(totalArc <= circumference)
+        {
+            unitCap++;
+            totalArc += spacingLimit;
+        }
+        if(numUnits > unitCap)
+        {
+            if(index < unitCap)
+            {
+                return Offset(unitCap, index, spacingLimit, baseRadius);
+            }
+            else
+            {
+                return Offset(numUnits - unitCap, index - unitCap, spacingLimit, baseRadius + spacingLimit);
+            }
         }
         else
         {
             float theta = 2 * Mathf.PI * index / numUnits;
-            x = radius * Mathf.Sin(theta);
-            y = radius * Mathf.Cos(theta);
+            float x = baseRadius * Mathf.Sin(theta);
+            float y = baseRadius * Mathf.Cos(theta);
+            return new Vector3(x, y, 0.0f);
         }
-        return new Vector3(x, y, 0.0f);
-    }
+            //Mathf.Max(baseRadius,circumfrance / (2 * Mathf.PI));
+     }
 
     // Adds a specific game object entity to the army
     public void AddUnit(Entity entity)
