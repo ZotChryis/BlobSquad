@@ -45,7 +45,12 @@ public class Entity : MonoBehaviour
 
         // No gravity in our sim
         RigidBody.gravityScale = 0;
-        RigidBody.freezeRotation = true;
+
+        // If we aren't a castle, we must freeze rot
+        if (TroopType != ArmyManager.Troop.Castle)
+        {
+            RigidBody.freezeRotation = true;
+        }
     }
 
     public void Update()
@@ -86,15 +91,23 @@ public class Entity : MonoBehaviour
     {
         // play death noise
         // play death poof animation
-        // if this is an enemy
-        if (!isFriendly)
+
+        // If it's a castle, check to see they win
+        if (TroopType == ArmyManager.Troop.Castle)
         {
-           // world manager.increment things killed, also tell enum class
+            ArmyManager.Get().CastleDeath(this);
         }
+        // if this is an enemy
+        else if (!isFriendly)
+        {
+            ArmyManager.Get().AddUnit(TroopType);
+        }
+
         if (this is Player)
         {
             // world manager.gameOgre
         }
+
         Destroy(this.gameObject);
     }
 }
