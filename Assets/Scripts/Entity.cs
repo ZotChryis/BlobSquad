@@ -90,10 +90,10 @@ public class Entity : MonoBehaviour
 
     public void Attack()
     {
-        Attack attack = this.GetComponentInChildren<Attack>();
+        Attack attack = this.gameObject.GetComponentInChildren<Attack>(true);
         Debug.Log(attack.ToString());
 
-        attack.gameObject.SetActive(false);
+        attack.gameObject.SetActive(true);
     }
 
     public void Die()
