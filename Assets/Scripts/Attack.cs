@@ -5,10 +5,11 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    public enum AttackType { Demo, Bow, Sword };
+    public enum AttackType { Chakram, Bow, Sword };
 
     [SerializeField]
     public bool FriendlyAttack;
+    public Vector2 direction;
     [SerializeField]
     private float AttackDuration;
     public int Damage;
@@ -20,6 +21,12 @@ public class Attack : MonoBehaviour
     void Start()
     {
         elapsedTime = 0;
+        if (atktype == AttackType.Chakram)
+        {
+            float angle = Vector2.SignedAngle(Vector2.up, direction);
+            angle = Mathf.Deg2Rad*angle; //+ Mathf.PI/2;
+            direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        }
     }
 
     // Update is called once per frame
@@ -32,9 +39,11 @@ public class Attack : MonoBehaviour
         }
         else
         {
-            
-            this.transform.Rotate(Vector3.forward*6);
-            this.transform.Translate(Vector3.left/12);
+            if (atktype == AttackType.Chakram)
+            {
+                this.transform.Rotate(Vector3.forward * 6);
+                this.transform.Translate(direction / 12);
+            }
         }
     }
 

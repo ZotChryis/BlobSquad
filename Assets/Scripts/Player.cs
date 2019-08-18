@@ -65,6 +65,7 @@ public class Player : Entity
     {
         Attack attack = GameObject.Instantiate(this.AttackPrefab, transform).GetComponent<Attack>();
         attack.FriendlyAttack = this.isFriendly;
+        attack.direction = direction;
     }
     /*
     public void OnCollisionEnter2D(Collision2D collision)
