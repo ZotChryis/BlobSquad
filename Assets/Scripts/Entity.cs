@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Entity : MonoBehaviour
 {
@@ -113,9 +114,27 @@ public class Entity : MonoBehaviour
 
         if (this is Player)
         {
-            // world manager.gameOgre
+            //StartCoroutine(GameOver());
+            SceneManager.LoadScene("Victory", LoadSceneMode.Single);
         }
 
         Destroy(this.gameObject);
+    }
+
+
+
+
+
+
+
+
+    // TODO: Move this to some other class, for now its easier to have it here
+    public IEnumerator GameOver()
+    {
+        SceneManager.LoadScene("Victory", LoadSceneMode.Additive);
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.UnloadSceneAsync("SampleScene");
     }
 }
