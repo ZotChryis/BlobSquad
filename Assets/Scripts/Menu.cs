@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void OnPlayClicked()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Easy", LoadSceneMode.Single);
     }
 
     public void AnimationExit()
