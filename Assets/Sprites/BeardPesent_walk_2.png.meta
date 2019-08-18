@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: 0cd8a2c2c338a4d47b6c16c53548d591
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4835474419463421816
+    second: BeardPesent_walk_2_0
+  - first:
+      213: 1051295797135864932
+    second: BeardPesent_walk_2_1
+  - first:
+      213: -8429708807774269909
+    second: BeardPesent_walk_2_2
+  - first:
+      213: 4192442575351300721
+    second: BeardPesent_walk_2_3
+  - first:
+      213: -4998217383122417913
+    second: BeardPesent_walk_2_4
+  - first:
+      213: -4340995359507468395
+    second: BeardPesent_walk_2_5
+  - first:
+      213: 6608992651478579716
+    second: BeardPesent_walk_2_6
+  - first:
+      213: 2256634138219043355
+    second: BeardPesent_walk_2_7
+  - first:
+      213: -8163472640696176125
+    second: BeardPesent_walk_2_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +67,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +97,222 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_0
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 3
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddf08b91ab6cef4daca24803fdb553e
+      internalID: -4835474419463421816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_1
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 4
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96e2788540359c4e9dcfe20747ecefb
+      internalID: 1051295797135864932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_2
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 4
+        width: 22
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c7858c2f8261f458a68270c5a4a790
+      internalID: -8429708807774269909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 3
+        width: 22
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718cf4ac94d3f284d87eeda3be81f519
+      internalID: 4192442575351300721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_4
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 2
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0378b32b67433e4fb0aa698d06bfb95
+      internalID: -4998217383122417913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_5
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 4
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcae6646d3365f4b941d7bf1add74e0
+      internalID: -4340995359507468395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_6
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 3
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fdd96a988d02e458cad05e1d797091
+      internalID: 6608992651478579716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9962b6a75bcfd0c42b72f7672b075c97
+      internalID: 2256634138219043355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeardPesent_walk_2_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923cafcb1f1970f4990203b567f1396a
+      internalID: -8163472640696176125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
