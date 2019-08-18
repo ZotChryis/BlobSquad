@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject[] Spawnables;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private float Rate;
+
+    [SerializeField]
+    private int Capacity;
+
+    private float lastSpawn = 0;
+    private List<GameObject> spawned = new List<GameObject>();
+
+    public void Update()
     {
-        
+        if (spawned.Count >= Capacity)
+        {
+            return;
+        }
+
+        if (Time.time - lastSpawn >= Rate)
+        {
+            lastSpawn = Time.time;
+            GameObject spawn = GameObject.Instantiate(Spawnables[Random.Range(0, Spawnables.Length)]);
+            spawn.transform.position = this.transform.position;
+            spawned.Add(spawn);
+        }
     }
 }
