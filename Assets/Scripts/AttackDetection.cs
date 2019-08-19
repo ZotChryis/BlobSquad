@@ -48,7 +48,7 @@ public class AttackDetection : MonoBehaviour
         }
     }
 
-    public void OnTriggerStay2D(Collider2D collider)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
         // Did we collide with an entity?
         Entity entity = collider.gameObject.GetComponent<Entity>();
