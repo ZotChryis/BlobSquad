@@ -130,7 +130,7 @@ public class Entity : MonoBehaviour
 
     public bool IsMelee()
     {
-        return TroopType == ArmyManager.Troop.Knight;
+        return TroopType == ArmyManager.Troop.Knight || TroopType == ArmyManager.Troop.Assassin;
     }
 
     public bool IsRanged()
