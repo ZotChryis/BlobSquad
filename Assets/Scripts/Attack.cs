@@ -36,7 +36,10 @@ public class Attack : MonoBehaviour
 
             if (atktype == AttackType.Bow)
             {
-                this.transform.Rotate(0f, 0f, FacingToDegrees(facing));
+                float deg = Mathf.Atan2(facing.y, facing.x);
+                Debug.Log("DEG = " + deg);
+                this.transform.SetParent(null);
+                this.transform.Rotate(0f, 0f, deg);
             }
         }
 
@@ -103,59 +106,5 @@ public class Attack : MonoBehaviour
         {
             entity.Wound(Damage);
         }
-    }
-
-    private float FacingToDegrees(Vector2 facing)
-    {
-        if (facing.x == 1)
-        {
-            if (facing.y == 1)
-            {
-                return 45;
-            }
-            if (facing.y == 0)
-            {
-                return 90;
-            }
-            if (facing.y == -1)
-            {
-                return 135;
-            }
-        }
-
-        if (facing.x == 0)
-        {
-            if (facing.y == 1)
-            {
-                return 0;
-            }
-            if (facing.y == 0)
-            {
-                // ??
-                return 0;
-            }
-            if (facing.y == -1)
-            {
-                return 180;
-            }
-        }
-
-        if (facing.x == -1)
-        {
-            if (facing.y == 1)
-            {
-                return 315;
-            }
-            if (facing.y == 0)
-            {
-                return 270;
-            }
-            if (facing.y == -1)
-            {
-                return 225;
-            }
-        }
-
-        return 0f;
     }
 }
