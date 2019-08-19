@@ -153,7 +153,7 @@ MonoBehaviour:
   MinDistance: 0
   BarHealth: {fileID: 4363887079203462214}
   BarCharisma: {fileID: 0}
-  TroopType: 2
+  TroopType: 3
   AttackPrefab: {fileID: 0}
   SpeechBubble: {fileID: 0}
   SpeechText: {fileID: 0}

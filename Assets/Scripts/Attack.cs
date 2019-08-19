@@ -21,12 +21,23 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
+        // Ensure we have a facing
+        if (facing == Vector2.zero)
+        {
+            facing = Vector2.one;
+        }
+
         elapsedTime = 0;
-        if (atktype == AttackType.Chakram)
+        if (atktype == AttackType.Chakram || atktype == AttackType.Bow)
         {
             float angle = Vector2.SignedAngle(Vector2.up, direction);
             angle = Mathf.Deg2Rad*angle; //+ Mathf.PI/2;
             direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
+            if (atktype == AttackType.Bow)
+            {
+                this.transform.Rotate(0f, 0f, FacingToDegrees(facing));
+            }
         }
 
         // Add color for friendly attack/enemy so we can tell for now
@@ -54,6 +65,9 @@ public class Attack : MonoBehaviour
             case AttackType.Sword:
                 UpdateSword();
                 break;
+            case AttackType.Bow:
+                UpdateBow();
+                break;
         }
     }
 
@@ -72,6 +86,11 @@ public class Attack : MonoBehaviour
         this.transform.Translate(facing / 100);
     }
 
+    public void UpdateBow()
+    {
+        this.transform.Translate(facing / 15);
+    }
+
     public void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("Collision");
@@ -87,5 +106,59 @@ public class Attack : MonoBehaviour
             Debug.Log("Gotem!");
             entity.Wound(Damage);
         }
+    }
+
+    private float FacingToDegrees(Vector2 facing)
+    {
+        if (facing.x == 1)
+        {
+            if (facing.y == 1)
+            {
+                return 45;
+            }
+            if (facing.y == 0)
+            {
+                return 90;
+            }
+            if (facing.y == -1)
+            {
+                return 135;
+            }
+        }
+
+        if (facing.x == 0)
+        {
+            if (facing.y == 1)
+            {
+                return 0;
+            }
+            if (facing.y == 0)
+            {
+                // ??
+                return 0;
+            }
+            if (facing.y == -1)
+            {
+                return 180;
+            }
+        }
+
+        if (facing.x == -1)
+        {
+            if (facing.y == 1)
+            {
+                return 315;
+            }
+            if (facing.y == 0)
+            {
+                return 270;
+            }
+            if (facing.y == -1)
+            {
+                return 225;
+            }
+        }
+
+        return 0f;
     }
 }
