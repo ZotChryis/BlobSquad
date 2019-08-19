@@ -15,7 +15,7 @@ public class AttackDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Entity parent = this.gameObject.GetComponentInParent<Entity>();
+        parent = this.gameObject.GetComponentInParent<Entity>();
         parentEntityAllignment = parent.isFriendly;
         parentIsAttacking = false;
         enemies = new List<Collider2D>();
@@ -34,7 +34,7 @@ public class AttackDetection : MonoBehaviour
         if (enemies.Count < 0 && parentIsAttacking) parent.setAttacking(false);
     }
 
-    public void OnTriggerStay(Collider2D collider)
+    public void OnTriggerStay2D(Collider2D collider)
     {
         // Did we collide with an entity?
         Entity entity = collider.gameObject.GetComponent<Entity>();
@@ -44,7 +44,6 @@ public class AttackDetection : MonoBehaviour
         if (parentEntityAllignment ^ foreignEntityAllignment && !enemies.Contains(collider))
         {
             enemies.Add(collider);
-            Debug.Log("New Enemy!!");
         }
     }
 }
