@@ -81,7 +81,7 @@ public class Attack : MonoBehaviour
     public void UpdateSword()
     {
         // Rotate the swipe a little
-        this.transform.Rotate(Vector3.forward * 4);
+        this.transform.Rotate(Vector3.forward * 6);
 
         // Move the sword swipe forward a bit
         this.transform.Translate(facing / 100);
@@ -89,7 +89,7 @@ public class Attack : MonoBehaviour
 
     public void UpdateBow()
     {
-        this.transform.Translate(Vector2.up / 8);
+        this.transform.Translate(Vector2.up / 12);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
