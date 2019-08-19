@@ -22,10 +22,15 @@ public class ArmyManager : MonoBehaviour
     private float spacing;
 
     [SerializeField]
+    private float tightSpacing;
+
+    [SerializeField]
     public GameObject[] ClassToPrefabMap;
 
     [SerializeField]
     private List<Entity> Castles;
+
+    private float currentSpacing;
 
     public enum Troop
     {
@@ -39,17 +44,34 @@ public class ArmyManager : MonoBehaviour
 
     public void Start()
     {
+        currentSpacing = spacing;
         m_instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Change spacing depending on input?!!
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            currentSpacing = tightSpacing;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            currentSpacing = spacing;
+        }
+
+        // get current player location
+        Vector2 playerPos = player.transform.position;
+        if (Input.GetMouseButton(1))
+        {
+            playerPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+
         Entity[] army = this.gameObject.GetComponentsInChildren<Entity>();
         // get current army size
         armySize = army.Length;
-        // get current player location
-        Vector2 playerPos = player.transform.position;
+        
         // tell army which positions to march to
         int entityIndex = 0;
         // sort army
@@ -61,12 +83,10 @@ public class ArmyManager : MonoBehaviour
         // then update positions
         foreach (Entity ally in army)
         {
-            ally.target = playerPos + Offset(armySize,entityIndex,spacing,spacing);
+            ally.target = playerPos + Offset(armySize,entityIndex, currentSpacing, currentSpacing);
             entityIndex++;
         }
     }
-
-
 
     public Vector2 Offset(int numUnits, int index, float spacingLimit, float baseRadius)
     {
