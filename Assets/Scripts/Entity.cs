@@ -89,15 +89,16 @@ public class Entity : MonoBehaviour
             canAttack = true;
         }
 
-        if (true && canAttack)
-        {
-            Attack();
-        }
         // The player class will handle player movement.
         if (this is Player || this.TroopType == ArmyManager.Troop.Castle)
         {
             return;
-        }  
+        }
+
+        if (true && canAttack)
+        {
+            Attack();
+        }
 
         // Standard movement logic for all entities
         Vector2 position = this.transform.position;
