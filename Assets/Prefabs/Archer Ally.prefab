@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6935983474031110417}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4726556038957558003
 SpriteRenderer:
@@ -400,6 +400,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 0.30000407
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065866182268137984, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065866182268137984, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065866182268137984, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065866182268137984, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4368673474370630105, guid: bc9b5759e3f60664d99e4473df6afe6d, type: 3}

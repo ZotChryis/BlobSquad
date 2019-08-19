@@ -97,7 +97,7 @@ MonoBehaviour:
   FriendlyAttack: 1
   direction: {x: 0, y: 0}
   facing: {x: 0, y: 0}
-  AttackDuration: 4
+  AttackDuration: 1.5
   Damage: 5
   atktype: 1
   elapsedTime: 0
