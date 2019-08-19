@@ -36,6 +36,7 @@ public class ArmyManager : MonoBehaviour
     {
         Knight = 0,
         Archer = 1,
+        Assassin = 2,
         // etc
 
         // This has to be the last one
@@ -44,7 +45,7 @@ public class ArmyManager : MonoBehaviour
 
     public void Start()
     {
-        currentSpacing = spacing;
+        currentSpacing = tightSpacing;
         m_instance = this;
     }
 
@@ -54,11 +55,11 @@ public class ArmyManager : MonoBehaviour
         // Change spacing depending on input?!!
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            currentSpacing = tightSpacing;
+            currentSpacing = spacing;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            currentSpacing = spacing;
+            currentSpacing = tightSpacing;
         }
 
         // get current player location
