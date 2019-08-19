@@ -39,7 +39,6 @@ public class Attack : MonoBehaviour
             this.transform.SetParent(null);
             float angle = Vector2.SignedAngle(Vector2.up, facing);
             this.transform.Rotate(0,0,angle);
-            Debug.Log(angle);
         }
 
         // Add color for friendly attack/enemy so we can tell for now
@@ -82,7 +81,7 @@ public class Attack : MonoBehaviour
     public void UpdateSword()
     {
         // Rotate the swipe a little
-        this.transform.Rotate(Vector3.forward * 4);
+        this.transform.Rotate(Vector3.forward * 6);
 
         // Move the sword swipe forward a bit
         this.transform.Translate(facing / 100);
@@ -90,7 +89,7 @@ public class Attack : MonoBehaviour
 
     public void UpdateBow()
     {
-        this.transform.Translate(Vector2.up / 8);
+        this.transform.Translate(Vector2.up / 12);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)

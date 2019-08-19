@@ -35,8 +35,17 @@ public class AttackDetection : MonoBehaviour
         }
 
         // update parent behavior
-        if (enemies.Count > 0 && !parentIsAttacking) parent.setAttacking(true);
-        if (enemies.Count < 0 && parentIsAttacking) parent.setAttacking(false);
+        if (enemies.Count > 0 && !parentIsAttacking)
+        {
+            parent.SetAttacking(true);
+            parentIsAttacking = true;
+        }
+
+        if (enemies.Count == 0 && parentIsAttacking)
+        {
+            parent.SetAttacking(false);
+            parentIsAttacking = false;
+        }
     }
 
     public void OnTriggerStay2D(Collider2D collider)
@@ -50,5 +59,10 @@ public class AttackDetection : MonoBehaviour
         {
             enemies.Add(collider);
         }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        enemies.Remove(other);
     }
 }

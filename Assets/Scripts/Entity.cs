@@ -123,7 +123,7 @@ public class Entity : MonoBehaviour
         RigidBody.velocity = direction.normalized * speed;
     }
 
-    public void setAttacking(bool aggro)
+    public void SetAttacking(bool aggro)
     {
         isAttacking = aggro;
     }
