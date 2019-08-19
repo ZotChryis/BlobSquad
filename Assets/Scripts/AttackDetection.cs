@@ -25,10 +25,15 @@ public class AttackDetection : MonoBehaviour
     void Update()
     {
         // remove absent enemies
-        foreach (Collider2D enemy in enemies)
+        for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            if (!enemy) enemies.Remove(enemy);
+            Collider2D enemy = enemies[i];
+            if (!enemy)
+            {
+                enemies.RemoveAt(i);
+            }
         }
+
         // update parent behavior
         if (enemies.Count > 0 && !parentIsAttacking) parent.setAttacking(true);
         if (enemies.Count < 0 && parentIsAttacking) parent.setAttacking(false);

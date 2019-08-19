@@ -319,6 +319,7 @@ MonoBehaviour:
   TroopType: 0
   AttackPrefab: {fileID: 4801818203748695028, guid: e2bda6aec8f6ab84985a8c955efa2e63,
     type: 3}
+  isAttacking: 0
   SpeechBubble: {fileID: 7052296801733457757}
   SpeechText: {fileID: 2594561698072068877}
   RecruitMessages:
@@ -647,6 +648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Charisma
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8918964695843732660, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
