@@ -31,7 +31,8 @@ public class Entity : MonoBehaviour
     private ArmyManager.Troop TroopType;
     [SerializeField]
     protected GameObject AttackPrefab;
-
+    [SerializeField]
+    protected bool isAttacking;
     [SerializeField]
     protected GameObject SpeechBubble;
     [SerializeField]
@@ -59,6 +60,7 @@ public class Entity : MonoBehaviour
     public void Start()
     {
         canAttack = true;
+        isAttacking = false;
         gHealth = Health;
         BarHealth.SetPercent(gHealth / Health);
         gCharisma = 0;
@@ -80,22 +82,22 @@ public class Entity : MonoBehaviour
 
     public void Update()
     {
+        if (gHealth <= 0) Die();
         // Tell everything if they can attack now
         if (!canAttack && Time.time - lastAttackTime >= AttackRate)
         {
             canAttack = true;
         }
 
+        if (true && canAttack)
+        {
+            Attack();
+        }
         // The player class will handle player movement.
         if (this is Player || this.TroopType == ArmyManager.Troop.Castle)
         {
             return;
         }  
-
-        if (canAttack)
-        {
-            Attack();
-        }
 
         // Standard movement logic for all entities
         Vector2 position = this.transform.position;
@@ -118,6 +120,11 @@ public class Entity : MonoBehaviour
             speed /= 2;
         }
         RigidBody.velocity = direction.normalized * speed;
+    }
+
+    public void setAttacking(bool aggro)
+    {
+        isAttacking = aggro;
     }
 
     public bool IsMelee()
