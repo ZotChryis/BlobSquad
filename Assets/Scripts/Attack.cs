@@ -90,7 +90,7 @@ public class Attack : MonoBehaviour
 
     public void UpdateBow()
     {
-        this.transform.Translate(Vector2.up / 15);
+        this.transform.Translate(Vector2.up / 8);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
