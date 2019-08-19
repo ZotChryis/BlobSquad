@@ -95,7 +95,7 @@ public class Entity : MonoBehaviour
             return;
         }
 
-        if (true && canAttack)
+        if (isAttacking && canAttack)
         {
             Attack();
         }

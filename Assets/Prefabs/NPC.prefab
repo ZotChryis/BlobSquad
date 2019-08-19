@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7065866182268137984}
   - component: {fileID: 8095182677873082646}
+  - component: {fileID: 6516751798987395813}
   m_Layer: 0
   m_Name: AttackDetector
   m_TagString: Untagged
@@ -207,3 +208,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6516751798987395813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202864755092755674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee98d8b1aebff0b4dac7cc8248695460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  parentEntityAllignment: 0
+  parentIsAttacking: 0
+  enemies: []
