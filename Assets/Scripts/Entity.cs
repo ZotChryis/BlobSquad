@@ -174,7 +174,7 @@ public class Entity : MonoBehaviour
         if (this is Player)
         {
             // TODO: Game over
-            SceneManager.LoadScene("Victory", LoadSceneMode.Single);
+            SceneManager.LoadScene("Loss", LoadSceneMode.Single);
         }
 
         // Inform the spawner we came from that we perished!
