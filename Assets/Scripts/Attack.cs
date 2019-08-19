@@ -28,19 +28,18 @@ public class Attack : MonoBehaviour
         }
 
         elapsedTime = 0;
-        if (atktype == AttackType.Chakram || atktype == AttackType.Bow)
+        if (atktype == AttackType.Chakram)
         {
             float angle = Vector2.SignedAngle(Vector2.up, direction);
             angle = Mathf.Deg2Rad*angle; //+ Mathf.PI/2;
             direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-
-            if (atktype == AttackType.Bow)
-            {
-                float deg = Mathf.Atan2(facing.y, facing.x);
-                Debug.Log("DEG = " + deg);
-                this.transform.SetParent(null);
-                this.transform.Rotate(0f, 0f, deg);
-            }
+        }
+        if (atktype == AttackType.Bow)
+        {
+            this.transform.SetParent(null);
+            float angle = Vector2.SignedAngle(Vector2.up, facing);
+            this.transform.Rotate(0,0,angle);
+            Debug.Log(angle);
         }
 
         // Add color for friendly attack/enemy so we can tell for now
@@ -83,7 +82,7 @@ public class Attack : MonoBehaviour
     public void UpdateSword()
     {
         // Rotate the swipe a little
-        this.transform.Rotate(Vector3.forward / 2);
+        this.transform.Rotate(Vector3.forward * 4);
 
         // Move the sword swipe forward a bit
         this.transform.Translate(facing / 100);
@@ -91,7 +90,7 @@ public class Attack : MonoBehaviour
 
     public void UpdateBow()
     {
-        this.transform.Translate(facing / 15);
+        this.transform.Translate(Vector2.up / 15);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
