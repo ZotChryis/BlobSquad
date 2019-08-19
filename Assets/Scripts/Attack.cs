@@ -39,7 +39,6 @@ public class Attack : MonoBehaviour
             this.transform.SetParent(null);
             float angle = Vector2.SignedAngle(Vector2.up, facing);
             this.transform.Rotate(0,0,angle);
-            Debug.Log(angle);
         }
 
         // Add color for friendly attack/enemy so we can tell for now
