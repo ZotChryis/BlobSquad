@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -4998440998019307585}
   - component: {fileID: 8000644293438405826}
   - component: {fileID: 5359243096740903093}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cd6aeecb7dafa40a775d9320a71736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackSource: {fileID: 0}
   FriendlyAttack: 1
+  direction: {x: 0, y: 0}
+  facing: {x: 0, y: 0}
+  AttackDuration: 0
   Damage: 1
+  atktype: 0
+  elapsedTime: 0

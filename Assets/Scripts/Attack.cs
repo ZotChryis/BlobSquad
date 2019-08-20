@@ -89,7 +89,7 @@ public class Attack : MonoBehaviour
 
     public void UpdateBow()
     {
-        this.transform.Translate(Vector2.up / 12);
+        this.transform.Translate(Vector2.up / 6);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
@@ -100,9 +100,10 @@ public class Attack : MonoBehaviour
 
         bool entityAllignment = entity.isFriendly;
         // Is this attack valid?
-        if (FriendlyAttack && !entityAllignment || !FriendlyAttack && entityAllignment)
+        if (FriendlyAttack ^ entityAllignment)
         {
             entity.Wound(Damage);
+            if (atktype == AttackType.Bow) GameObject.Destroy(this.gameObject);
         }
     }
 }
