@@ -45,6 +45,10 @@ public class Attack : MonoBehaviour
         GetComponent<SpriteRenderer>().color = FriendlyAttack
             ? Color.green
             : Color.red;
+            
+        this.gameObject.layer = FriendlyAttack
+            ? 13
+            : 14;
     }
 
     void Update()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7107649032970349172}
   - component: {fileID: 1323304530835895678}
   - component: {fileID: 4985322699287304113}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Chakram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
