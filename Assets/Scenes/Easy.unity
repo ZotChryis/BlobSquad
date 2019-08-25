@@ -132,6 +132,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: Castles.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: Castles.Array.data[0]
+      value: 
+      objectReference: {fileID: 2021925690}
+    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: Castles.Array.data[1]
+      value: 
+      objectReference: {fileID: 2021925689}
+    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: Castles.Array.data[2]
+      value: 
+      objectReference: {fileID: 2021925688}
+    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: Castles.Array.data[3]
+      value: 
+      objectReference: {fileID: 1125936454}
+    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 258809826}
+    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: spacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207102012982243547, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4029478381068897030, guid: 8e1fdc945193a374aa60702898c7e384,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,6 +242,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 519420032, guid: 8e1fdc945193a374aa60702898c7e384, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824288529030914575, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8215089865510855685, guid: 8e1fdc945193a374aa60702898c7e384,
         type: 3}
       propertyPath: ArmyManager
@@ -218,66 +267,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4801818203748695028, guid: 92d47c57e8f9fa1429c3358f9555d028,
         type: 3}
-    - target: {fileID: 519420032, guid: 8e1fdc945193a374aa60702898c7e384, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5824288529030914575, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1207102012982243547, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: Castles.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: Castles.Array.data[0]
-      value: 
-      objectReference: {fileID: 2021925690}
-    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: Castles.Array.data[1]
-      value: 
-      objectReference: {fileID: 2021925689}
-    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: Castles.Array.data[2]
-      value: 
-      objectReference: {fileID: 2021925688}
-    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: Castles.Array.data[3]
-      value: 
-      objectReference: {fileID: 1125936454}
-    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 258809826}
-    - target: {fileID: 1207102012982243548, guid: 8e1fdc945193a374aa60702898c7e384,
-        type: 3}
-      propertyPath: spacing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7582249163496342634, guid: 8e1fdc945193a374aa60702898c7e384,
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6945015566457697655, guid: 8e1fdc945193a374aa60702898c7e384,
+    - target: {fileID: 3687724388603471055, guid: 8e1fdc945193a374aa60702898c7e384,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3687724388603471055, guid: 8e1fdc945193a374aa60702898c7e384,
+    - target: {fileID: 6945015566457697655, guid: 8e1fdc945193a374aa60702898c7e384,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -380,6 +380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161897340670656059, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8865b2321942c0f4982a4c2e3e328b4d, type: 3}

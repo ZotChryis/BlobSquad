@@ -320,6 +320,7 @@ MonoBehaviour:
   AttackPrefab: {fileID: 4801818203748695028, guid: e2bda6aec8f6ab84985a8c955efa2e63,
     type: 3}
   isAttacking: 0
+  isAggro: 0
   SpeechBubble: {fileID: 7052296801733457757}
   SpeechText: {fileID: 2594561698072068877}
   RecruitMessages:
@@ -806,7 +807,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6723950158791630334}
     - target: {fileID: 3533906427734738331, guid: 6cdbf2b242adb244cbcfa8d39b451c12,
         type: 3}
       propertyPath: spacing

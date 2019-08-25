@@ -98,6 +98,10 @@ public class Attack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
+        if(atktype == AttackType.Bow)
+        {
+            Debug.Log("Arrow Collision");
+        }
         // Did we collide with an entity?
         Entity entity = collider.gameObject.GetComponent<Entity>();
         if (entity == null) return;

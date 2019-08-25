@@ -241,6 +241,7 @@ MonoBehaviour:
   TroopType: 3
   AttackPrefab: {fileID: 0}
   isAttacking: 0
+  isAggro: 0
   SpeechBubble: {fileID: 2373674920794439113}
   SpeechText: {fileID: 4815456948600813567}
   RecruitMessages: []

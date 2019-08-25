@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8636954428240208269}
   - component: {fileID: 1569432786659989867}
-  - component: {fileID: 5334600201703169644}
   m_Layer: 0
   m_Name: AggroDetector
   m_TagString: Untagged
@@ -48,22 +47,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
---- !u!114 &5334600201703169644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508576263237504639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f319485c9e62944ba314e857aa2e1b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  parentEntityAllignment: 0
-  parentIsAttacking: 0
-  enemies: []
 --- !u!1 &4368673474370630109
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +156,7 @@ MonoBehaviour:
   TroopType: 0
   AttackPrefab: {fileID: 0}
   isAttacking: 0
+  isAggro: 0
   SpeechBubble: {fileID: 0}
   SpeechText: {fileID: 0}
   RecruitMessages: []
@@ -223,7 +207,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.94, y: 12.74}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5202864755092755674
 GameObject:
