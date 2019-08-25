@@ -20,7 +20,8 @@ public class Entity : MonoBehaviour
     protected Rigidbody2D RigidBody;
     [SerializeField]
     private float DampenDistance;
-    public Vector2 target;
+    public GameObject target;
+    public Vector2 destination;
     [SerializeField]
     private float MinDistance;
     [SerializeField]
@@ -41,6 +42,8 @@ public class Entity : MonoBehaviour
     protected TextMeshPro SpeechText;
     [SerializeField]
     protected string[] RecruitMessages;
+    [SerializeField]
+    protected float attackRange;
 
     [SerializeField]
     protected float AttackRate;
@@ -71,7 +74,6 @@ public class Entity : MonoBehaviour
             BarCharisma.SetPercent(gCharisma / Charisma);
         }
         gSpeed = Speed;
-
         // No gravity in our sim
         RigidBody.gravityScale = 0;
 
@@ -106,14 +108,26 @@ public class Entity : MonoBehaviour
         Vector2 position = this.transform.position;
         float dist = 0;
         direction = Vector2.zero;
+
+        // targeting logic
+        if (!target) target = null;
         if (target != null)
+        {
+            Vector2 targetLocation = target.transform.position;
+            facing = Vector3.Normalize(targetLocation - position);
+            dist = Vector3.Distance(destination, position);
+            destination = facing*(dist - attackRange);
+        }
+        // if you have a target that is alive, set destination to it's position
+
+        // move to destination Logic
+        if (destination != null)
         {
             // we only use facing for attack direction for now
             // we want this to be opposite the angle to player
-            facing = Vector3.Normalize(target - position);
-
-            dist = Vector3.Distance(target, position);
-            if (dist > MinDistance) direction = target - position;
+            facing = Vector3.Normalize(destination - position);
+            dist = Vector3.Distance(destination, position);
+            if (dist > MinDistance) direction = destination - position;
         }
         //Debug.Log("Direction is:");
         //Debug.Log(direction.ToString());
@@ -130,7 +144,7 @@ public class Entity : MonoBehaviour
         isAttacking = atk;
     }
 
-    public void SetAggro(bool aggro, GameObject target)
+    public void SetAggro(bool aggro, GameObject destination)
     {
         if (!aggro) 
         {
@@ -138,7 +152,7 @@ public class Entity : MonoBehaviour
         }
         else
         {
-            // set target
+            // set destination
             // set isAggro to true
             Debug.Log("fix the aggro set true script");
         }

@@ -234,7 +234,8 @@ MonoBehaviour:
   Speed: 0
   RigidBody: {fileID: 5922138668294879035}
   DampenDistance: 0
-  target: {x: 0, y: 0}
+  target: {fileID: 0}
+  destination: {x: 0, y: 0}
   MinDistance: 0
   BarHealth: {fileID: 4363887079203462214}
   BarCharisma: {fileID: 0}
@@ -245,6 +246,7 @@ MonoBehaviour:
   SpeechBubble: {fileID: 2373674920794439113}
   SpeechText: {fileID: 4815456948600813567}
   RecruitMessages: []
+  attackRange: 0
   AttackRate: 0
   isFriendly: 0
 --- !u!1 &2837165915429708867
@@ -536,7 +538,7 @@ MonoBehaviour:
   - This is my land!
   - You will regret this!
   - Attack him at once!
-  TargetLocations:
+  destinations:
   - {fileID: 7711982599837284591}
   - {fileID: 3165250342816045204}
   - {fileID: 8255578101184249141}
@@ -687,12 +689,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 8918964696314975451, guid: 0572a89339b6e6d468f678a51bd55abb,
+    - target: {fileID: 8918964695566061775, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 8918964695566061775, guid: 0572a89339b6e6d468f678a51bd55abb,
+    - target: {fileID: 8918964696314975451, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_Layer
       value: 9

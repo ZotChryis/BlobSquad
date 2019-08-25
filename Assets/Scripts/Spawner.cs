@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     private string[] ContactLines;
 
     [SerializeField]
-    private GameObject[] TargetLocations;
+    private GameObject[] destinations;
 
     private float tickTime = 0;
     private bool initialPlayerContact = false;
@@ -62,7 +62,7 @@ public class Spawner : MonoBehaviour
             spawned.Add(spawn);
 
             spawn.GetComponent<Entity>().SetSpawner(this);
-            spawn.GetComponent<Entity>().target = TargetLocations[Random.RandomRange(0, TargetLocations.Length)].transform.position;
+            spawn.GetComponent<Entity>().destination = destinations[Random.RandomRange(0, destinations.Length)].transform.position;
 
             Castle.Speak(ContactLines[Random.RandomRange(0, ContactLines.Length)], 1.5f);
         }
