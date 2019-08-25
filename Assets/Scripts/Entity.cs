@@ -34,6 +34,8 @@ public class Entity : MonoBehaviour
     [SerializeField]
     protected bool isAttacking;
     [SerializeField]
+    protected bool isAggro;
+    [SerializeField]
     protected GameObject SpeechBubble;
     [SerializeField]
     protected TextMeshPro SpeechText;
@@ -123,9 +125,23 @@ public class Entity : MonoBehaviour
         RigidBody.velocity = direction.normalized * speed;
     }
 
-    public void SetAttacking(bool aggro)
+    public void SetAttacking(bool atk)
     {
-        isAttacking = aggro;
+        isAttacking = atk;
+    }
+
+    public void SetAggro(bool aggro, GameObject target)
+    {
+        if (!aggro) 
+        {
+            isAggro = false;
+        }
+        else
+        {
+            // set target
+            // set isAggro to true
+            Debug.Log("fix the aggro set true script");
+        }
     }
 
     public bool IsMelee()
