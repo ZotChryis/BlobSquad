@@ -98,10 +98,6 @@ public class Attack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if(atktype == AttackType.Bow)
-        {
-            Debug.Log("Arrow Collision");
-        }
         // Did we collide with an entity?
         Entity entity = collider.gameObject.GetComponent<Entity>();
         if (entity == null) return;
@@ -110,8 +106,15 @@ public class Attack : MonoBehaviour
         // Is this attack valid?
         if (FriendlyAttack ^ entityAllignment)
         {
+            if (atktype == AttackType.Bow)
+            {
+                GameObject.Destroy(this.gameObject);
+                if (entity.GetTroopType() != ArmyManager.Troop.Castle) entity.Wound(Damage);
+            }
+            else
+            {
             entity.Wound(Damage);
-            if (atktype == AttackType.Bow) GameObject.Destroy(this.gameObject);
+            }
         }
     }
 }

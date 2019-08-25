@@ -161,6 +161,11 @@ public class Entity : MonoBehaviour
         if (gHealth <= 0) Die();
     }
 
+    public ArmyManager.Troop GetTroopType()
+    {
+        return this.TroopType;
+    }
+
     public void Attack()
     {
         canAttack = false;
