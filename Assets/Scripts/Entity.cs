@@ -179,6 +179,8 @@ public class Entity : MonoBehaviour
     public void Die()
     {
         // play death noise
+        SoundManager.Get().PlaySoundEffect(SoundManager.SoundEffect.Death);
+
         // play death poof animation
 
         // If it's a castle, check to see they win
