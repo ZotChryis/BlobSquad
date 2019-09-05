@@ -65,11 +65,11 @@ public class Player : Entity
         RigidBody.velocity = direction.normalized * gSpeed;
 
         // do the atatack
-        if (canAttack && Input.GetButtonDown("Jump"))
+        if (canAttack && (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1")))
         {
             Attack();
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKey(KeyCode.P) && false)
         {
             if (Random.Range(0f, 1f) > 0.5f) Army.AddUnit(ArmyManager.Troop.Knight);
             else Army.AddUnit(ArmyManager.Troop.Archer);

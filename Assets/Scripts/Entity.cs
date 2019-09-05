@@ -99,7 +99,6 @@ public class Entity : MonoBehaviour
         {
             canAttack = true;
         }
-
         // The player class will handle player movement.
         if (this is Player || this.TroopType == ArmyManager.Troop.Castle)
         {

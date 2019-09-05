@@ -45,15 +45,24 @@ public class Attack : MonoBehaviour
             soundMgr.PlaySoundEffect(SoundManager.SoundEffect.AttackArrow);
         }
         if (atktype == AttackType.Sword)
-        {
+        {   
             soundMgr.PlaySoundEffect(SoundManager.SoundEffect.AttackSword);
+            float angle = Vector2.SignedAngle(Vector2.up, facing);
+            Debug.Log(angle);
+            if (angle < 0) {
+                SpriteRenderer temp = gameObject.GetComponent<SpriteRenderer>();
+                temp.flipX = true;
+                Debug.Log("happened");
+            }
+            this.transform.Rotate(0,0,angle);
         }
-
+        else
+        {
         // Add color for friendly attack/enemy so we can tell for now
         GetComponent<SpriteRenderer>().color = FriendlyAttack
             ? Color.green
             : Color.red;
-            
+        }
         this.gameObject.layer = FriendlyAttack
             ? 13
             : 14;
@@ -93,7 +102,7 @@ public class Attack : MonoBehaviour
     public void UpdateSword()
     {
         // Rotate the swipe a little
-        this.transform.Rotate(Vector3.forward * 6);
+        this.transform.Rotate(Vector3.forward * 10);
 
         // Move the sword swipe forward a bit
         this.transform.Translate(facing / 100);

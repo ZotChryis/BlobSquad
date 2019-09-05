@@ -149,6 +149,7 @@ public class ArmyManager : MonoBehaviour
     // Adds a new game object of the given troop type to the army
     public void AddUnit(Troop type)
     {
+        if (armySize > 64) return;
         // TODO: Check to see if this mapping exists first. #YOLO
         GameObject entity = GameObject.Instantiate(ClassToPrefabMap[(int)type], this.gameObject.transform);
         entity.transform.SetParent(this.gameObject.transform);
