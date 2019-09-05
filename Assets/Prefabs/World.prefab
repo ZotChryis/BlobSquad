@@ -10626,6 +10626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8266475305121087075}
   - component: {fileID: 6447763263380779215}
+  - component: {fileID: 6006869869258506508}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -10748,6 +10749,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6006869869258506508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182683310406948044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95cc23c2288dec74ca49a562e908c932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1001 &773991601
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -49,11 +49,13 @@ public class ArmyManager : MonoBehaviour
         Castle,
     }
 
+    private int StartTime;
     public void Start()
     {
         currentSpacing = tightSpacing;
         m_instance = this;
         cursorSprite = cursor.GetComponent<SpriteRenderer>();
+        StartTime = (int)Time.time;
     }
 
     // Update is called once per frame
@@ -159,6 +161,8 @@ public class ArmyManager : MonoBehaviour
         if (Castles.Count == 0)
         {
             Debug.Log("YOU WIN!");
+            int finishTime = (int)Time.time - StartTime;
+            ScoreManager.Get().TrySetBestTime(finishTime);
             SceneManager.LoadScene("Victory", LoadSceneMode.Single);
         }
     }
