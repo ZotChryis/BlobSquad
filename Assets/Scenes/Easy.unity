@@ -267,6 +267,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4801818203748695028, guid: 92d47c57e8f9fa1429c3358f9555d028,
         type: 3}
+    - target: {fileID: 8215089865510855685, guid: 8e1fdc945193a374aa60702898c7e384,
+        type: 3}
+      propertyPath: Health
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7582249163496342634, guid: 8e1fdc945193a374aa60702898c7e384,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -289,6 +294,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6723950158791630334, guid: 8e1fdc945193a374aa60702898c7e384,
     type: 3}
   m_PrefabInstance: {fileID: 258809825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &359899972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8091058591004928141, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2021925687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &402518568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7628804405527539031, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2021925687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &451497600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3504499600315123958, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2021925687}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1125936454 stripped
 MonoBehaviour:
@@ -386,6 +409,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8376733621272223899, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: destinations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376733621272223899, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: destinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 359899972}
+    - target: {fileID: 8376733621272223899, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: destinations.Array.data[1]
+      value: 
+      objectReference: {fileID: 451497600}
+    - target: {fileID: 8376733621272223899, guid: 8865b2321942c0f4982a4c2e3e328b4d,
+        type: 3}
+      propertyPath: destinations.Array.data[2]
+      value: 
+      objectReference: {fileID: 402518568}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8865b2321942c0f4982a4c2e3e328b4d, type: 3}
 --- !u!114 &2021925688 stripped

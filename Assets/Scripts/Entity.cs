@@ -20,7 +20,8 @@ public class Entity : MonoBehaviour
     protected Rigidbody2D RigidBody;
     [SerializeField]
     private float DampenDistance;
-    public Vector2 target;
+    public GameObject target;
+    public Vector2 destination;
     [SerializeField]
     private float MinDistance;
     [SerializeField]
@@ -41,6 +42,10 @@ public class Entity : MonoBehaviour
     protected TextMeshPro SpeechText;
     [SerializeField]
     protected string[] RecruitMessages;
+    [SerializeField]
+    protected float dist;
+    [SerializeField]
+    protected float attackRange;
 
     [SerializeField]
     protected float AttackRate;
@@ -59,6 +64,8 @@ public class Entity : MonoBehaviour
     protected float lastAttackTime;
     protected bool canAttack;
 
+    public float lastSpeachTime;
+
     public void Start()
     {
         canAttack = true;
@@ -66,12 +73,12 @@ public class Entity : MonoBehaviour
         gHealth = Health;
         BarHealth.SetPercent(gHealth / Health);
         gCharisma = 0;
+        lastSpeachTime = float.MaxValue;
         if (BarCharisma != null)
         {
             BarCharisma.SetPercent(gCharisma / Charisma);
         }
         gSpeed = Speed;
-
         // No gravity in our sim
         RigidBody.gravityScale = 0;
 
@@ -84,6 +91,7 @@ public class Entity : MonoBehaviour
 
     public void Update()
     {
+        lastSpeachTime += Time.deltaTime;
         if (gHealth <= 0) Die();
         // Tell everything if they can attack now
         if (!canAttack && Time.time - lastAttackTime >= AttackRate)
@@ -104,16 +112,41 @@ public class Entity : MonoBehaviour
 
         // Standard movement logic for all entities
         Vector2 position = this.transform.position;
-        float dist = 0;
+        dist = 0;
         direction = Vector2.zero;
-        if (target != null)
+
+        // targeting logic
+        if (!target)
+        {
+        }
+        else
+        {
+            Vector2 targetLocation = target.transform.position;
+            float angle = Vector2.SignedAngle(Vector2.up, targetLocation - position);
+            //using dist here but it gets reset later
+            float offsetDist = attackRange - dist;
+            Vector2 offsetDirection = (targetLocation - position);
+            Vector2 offset = offsetDirection.normalized * -1 * offsetDist;
+
+            // if(lastSpeachTime > 2) Speak(""
+            //     // + "atkRange" + attackRange+"\n"
+            //     // + Mathf.Round(angle)+"\n"
+            //     + Mathf.Round(dist)+" away\n"
+            //     + "dist: " + Mathf.Round(offsetDist)+"\n"
+            //     ,1.5f);
+            destination = targetLocation + offset;
+            // Debug.Log(offset);
+        }
+        // if you have a target that is alive, set destination to it's position
+
+        // move to destination Logic
+        if (destination != null)
         {
             // we only use facing for attack direction for now
             // we want this to be opposite the angle to player
-            facing = Vector3.Normalize(target - position);
-
-            dist = Vector3.Distance(target, position);
-            if (dist > MinDistance) direction = target - position;
+            facing = Vector3.Normalize(destination - position);
+            dist = Vector3.Distance(destination, position);
+            if (dist > MinDistance) direction = destination - position;
         }
         //Debug.Log("Direction is:");
         //Debug.Log(direction.ToString());
@@ -130,7 +163,7 @@ public class Entity : MonoBehaviour
         isAttacking = atk;
     }
 
-    public void SetAggro(bool aggro, GameObject target)
+    public void SetAggro(bool aggro, GameObject destination)
     {
         if (!aggro) 
         {
@@ -138,7 +171,7 @@ public class Entity : MonoBehaviour
         }
         else
         {
-            // set target
+            // set destination
             // set isAggro to true
             Debug.Log("fix the aggro set true script");
         }
@@ -219,6 +252,7 @@ public class Entity : MonoBehaviour
         SpeechBubble.SetActive(true);
         SpeechText.text = text;
         StartCoroutine(StopSpeak(duration));
+        lastSpeachTime = 0;
     }
 
     public IEnumerator StopSpeak(float duration)
