@@ -16,9 +16,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> sounds;
 
-    [SerializeField]
-    private List<AudioClip> songs;
-
     public enum SoundEffect
     {
         AttackArrow,
