@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8636954428240208269}
   - component: {fileID: 1569432786659989867}
+  - component: {fileID: 1968326572321128187}
   m_Layer: 0
   m_Name: AggroDetector
   m_TagString: Untagged
@@ -41,12 +42,28 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
+--- !u!114 &1968326572321128187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508576263237504639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0553c3adc85d13e429aedb003d2a55c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  parentEntityAllignment: 0
+  parentIsAggro: 0
+  target: {fileID: 0}
 --- !u!1 &4368673474370630109
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +166,8 @@ MonoBehaviour:
   Speed: 0
   RigidBody: {fileID: 0}
   DampenDistance: 0
-  target: {x: 0, y: 0}
+  target: {fileID: 0}
+  destination: {x: 0, y: 0}
   MinDistance: 0
   BarHealth: {fileID: 0}
   BarCharisma: {fileID: 0}
@@ -160,6 +178,7 @@ MonoBehaviour:
   SpeechBubble: {fileID: 0}
   SpeechText: {fileID: 0}
   RecruitMessages: []
+  attackRange: 0
   AttackRate: 0
   isFriendly: 0
 --- !u!50 &4368673474370630111

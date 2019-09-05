@@ -110,13 +110,16 @@ public class Entity : MonoBehaviour
         direction = Vector2.zero;
 
         // targeting logic
-        if (!target) target = null;
-        if (target != null)
+        if (!target)
+        {
+        }
+        else
         {
             Vector2 targetLocation = target.transform.position;
             facing = Vector3.Normalize(targetLocation - position);
             dist = Vector3.Distance(destination, position);
-            destination = facing*(dist - attackRange);
+            destination = targetLocation;
+            //facing*(dist - attackRange);
         }
         // if you have a target that is alive, set destination to it's position
 
