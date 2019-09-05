@@ -63,11 +63,12 @@ public class Entity : MonoBehaviour
     protected Vector2 facing;
     protected float lastAttackTime;
     protected bool canAttack;
-
+    protected Animator animator;
     public float lastSpeachTime;
 
     public void Start()
     {
+        animator = this.GetComponent<Animator>();
         canAttack = true;
         isAttacking = false;
         gHealth = Health;
@@ -146,7 +147,14 @@ public class Entity : MonoBehaviour
             // we want this to be opposite the angle to player
             facing = Vector3.Normalize(destination - position);
             dist = Vector3.Distance(destination, position);
-            if (dist > MinDistance) direction = destination - position;
+            if (dist > MinDistance)
+            {
+                direction = destination - position; 
+            }
+            else
+            {
+                animator.SetBool("Walking", false);
+            }
         }
         //Debug.Log("Direction is:");
         //Debug.Log(direction.ToString());
@@ -156,6 +164,16 @@ public class Entity : MonoBehaviour
             speed /= 2;
         }
         RigidBody.velocity = direction.normalized * speed;
+        if(speed > 0.0001f && Vector2.SignedAngle(direction,Vector2.up) < 0)
+        {
+            animator.SetInteger("Direction", 1);
+            animator.SetBool("Walking", true);
+        }
+        else if(speed > 0.0001f && Vector2.SignedAngle(direction,Vector2.up) > 0)
+        {
+            animator.SetInteger("Direction",3);
+            animator.SetBool("Walking", true);
+        }
     }
 
     public void SetAttacking(bool atk)
