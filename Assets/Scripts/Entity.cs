@@ -154,7 +154,6 @@ public class Entity : MonoBehaviour
             else
             {
                 animator.SetBool("Walking", false);
-                Debug.Log("set walking off");
             }
         }
         //Debug.Log("Direction is:");
@@ -169,11 +168,9 @@ public class Entity : MonoBehaviour
         {
             animator.SetInteger("Direction", 1);
             animator.SetBool("Walking", true);
-            Debug.Log("set left");
         }
         else if(speed > 0.0001f && Vector2.SignedAngle(direction,Vector2.up) > 0)
         {
-            Debug.Log("set right");
             animator.SetInteger("Direction",3);
             animator.SetBool("Walking", true);
         }
