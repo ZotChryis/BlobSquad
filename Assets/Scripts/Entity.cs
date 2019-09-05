@@ -205,13 +205,15 @@ public class Entity : MonoBehaviour
         lastAttackTime = Time.time;
         Attack attack = GameObject.Instantiate(this.AttackPrefab, transform).GetComponent<Attack>();
         attack.FriendlyAttack = this.isFriendly;
-        attack.direction = direction;
-        attack.facing = facing;
+        attack.direction = this.isFriendly ? ArmyManager.Get().cursorDirection: direction;
+        attack.facing = this.isFriendly ? ArmyManager.Get().cursorDirection : facing;
     }
 
     public void Die()
     {
         // play death noise
+        SoundManager.Get().PlaySoundEffect(SoundManager.SoundEffect.Death);
+
         // play death poof animation
 
         // If it's a castle, check to see they win

@@ -21,6 +21,8 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
+        SoundManager soundMgr = SoundManager.Get();
+
         // Ensure we have a facing
         if (facing == Vector2.zero)
         {
@@ -33,12 +35,18 @@ public class Attack : MonoBehaviour
             float angle = Vector2.SignedAngle(Vector2.up, direction);
             angle = Mathf.Deg2Rad*angle; //+ Mathf.PI/2;
             direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            soundMgr.PlaySoundEffect(SoundManager.SoundEffect.AttackChakram);
         }
         if (atktype == AttackType.Bow)
         {
             this.transform.SetParent(null);
             float angle = Vector2.SignedAngle(Vector2.up, facing);
             this.transform.Rotate(0,0,angle);
+            soundMgr.PlaySoundEffect(SoundManager.SoundEffect.AttackArrow);
+        }
+        if (atktype == AttackType.Sword)
+        {
+            soundMgr.PlaySoundEffect(SoundManager.SoundEffect.AttackSword);
         }
 
         // Add color for friendly attack/enemy so we can tell for now

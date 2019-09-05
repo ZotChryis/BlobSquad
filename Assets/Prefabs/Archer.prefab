@@ -97,57 +97,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: TroopType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: AttackPrefab
-      value: 
-      objectReference: {fileID: 838188809072083810, guid: 97097f3a7608f1540be7ff247c948dc1,
-        type: 3}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: RigidBody
-      value: 
-      objectReference: {fileID: 4537180579500234732}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: Health
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: DampenDistance
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: MinDistance
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: BarHealth
-      value: 
-      objectReference: {fileID: 3921191761994392929}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: AttackRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: attackRange
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4368673474370630106, guid: bc9b5759e3f60664d99e4473df6afe6d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,6 +167,52 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: TroopType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: AttackPrefab
+      value: 
+      objectReference: {fileID: 838188809072083810, guid: 97097f3a7608f1540be7ff247c948dc1,
+        type: 3}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: RigidBody
+      value: 
+      objectReference: {fileID: 4537180579500234732}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: Health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: DampenDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: BarHealth
+      value: 
+      objectReference: {fileID: 3921191761994392929}
+    - target: {fileID: 4368673474370630104, guid: bc9b5759e3f60664d99e4473df6afe6d,
+        type: 3}
+      propertyPath: AttackRate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4368673474370630110, guid: bc9b5759e3f60664d99e4473df6afe6d,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -266,32 +261,22 @@ PrefabInstance:
     - target: {fileID: 7065866182268137984, guid: bc9b5759e3f60664d99e4473df6afe6d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7065866182268137984, guid: bc9b5759e3f60664d99e4473df6afe6d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7065866182268137984, guid: bc9b5759e3f60664d99e4473df6afe6d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1508576263237504639, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5202864755092755674, guid: bc9b5759e3f60664d99e4473df6afe6d,
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095182677873082646, guid: bc9b5759e3f60664d99e4473df6afe6d,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4368673474370630105, guid: bc9b5759e3f60664d99e4473df6afe6d,
         type: 3}
@@ -336,16 +321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4537180579500234729}
     m_Modifications:
-    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
-        type: 3}
-      propertyPath: m_Name
-      value: Health
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 8918964695843732660, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,12 +391,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 8918964695566061775, guid: 0572a89339b6e6d468f678a51bd55abb,
+    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
+        type: 3}
+      propertyPath: m_Name
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8918964696314975451, guid: 0572a89339b6e6d468f678a51bd55abb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918964695566061775, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_Layer
       value: 9
