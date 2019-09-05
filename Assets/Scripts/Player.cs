@@ -14,7 +14,6 @@ public class Player : Entity
     private static Player m_instance;
 
     private Vector2 movement;
-    private Animator animator;
 
     public void Start()
     {
@@ -23,7 +22,6 @@ public class Player : Entity
         base.Start();
         movement = Vector2.zero;
         direction = Vector2.zero;
-        animator = this.GetComponent<Animator>();
     }
 
     public void Update()
@@ -33,30 +31,30 @@ public class Player : Entity
         // Player movement is hard coded to the update loop of player
         // Up/Down is locked together. One or the other only
         direction = Vector2.zero;
-        animator.SetBool("Walking", false);
+        base.animator.SetBool("Walking", false);
         if (Input.GetKey(KeyCode.W))
         {
             direction.y = 1;
-            animator.SetBool("Walking", true);
+            base.animator.SetBool("Walking", true);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             direction.y = -1;
-            animator.SetBool("Walking", true);
+            base.animator.SetBool("Walking", true);
         }
 
         // Similar locking between to Left/Right
         if (Input.GetKey(KeyCode.A))
         {
             direction.x = -1;
-            animator.SetInteger("Direction", 1);
-            animator.SetBool("Walking", true);
+            base.animator.SetInteger("Direction", 1);
+            base.animator.SetBool("Walking", true);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             direction.x = 1;
-            animator.SetInteger("Direction", 3);
-            animator.SetBool("Walking", true);
+            base.animator.SetInteger("Direction", 3);
+            base.animator.SetBool("Walking", true);
         }
 
         if (direction != Vector2.zero)
