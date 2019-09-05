@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1499068415537142779, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: Speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2040218984937023858, guid: ed7582916f06f714a8d61bf4c37431fe,
         type: 3}
       propertyPath: m_LocalPosition.y

@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 25
   Charisma: 1
-  Speed: 5
+  Speed: 2.5
   RigidBody: {fileID: 4025451016063800570}
   DampenDistance: 0
   target: {x: 0, y: 0}
@@ -645,16 +645,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4029478381068897030}
     m_Modifications:
-    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
-        type: 3}
-      propertyPath: m_Name
-      value: Charisma
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8918964695843732660, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -710,6 +700,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
+        type: 3}
+      propertyPath: m_Name
+      value: Charisma
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8918964696314975453, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_Sprite
@@ -743,11 +743,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4029478381068897030}
     m_Modifications:
-    - target: {fileID: 3533906427734738330, guid: 6cdbf2b242adb244cbcfa8d39b451c12,
-        type: 3}
-      propertyPath: m_Name
-      value: Army
-      objectReference: {fileID: 0}
     - target: {fileID: 3533906427734738332, guid: 6cdbf2b242adb244cbcfa8d39b451c12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -813,6 +808,11 @@ PrefabInstance:
       propertyPath: spacing
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3533906427734738330, guid: 6cdbf2b242adb244cbcfa8d39b451c12,
+        type: 3}
+      propertyPath: m_Name
+      value: Army
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cdbf2b242adb244cbcfa8d39b451c12, type: 3}
 --- !u!4 &1207102012982243547 stripped
@@ -840,11 +840,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4029478381068897030}
     m_Modifications:
-    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
-        type: 3}
-      propertyPath: m_Name
-      value: Health
-      objectReference: {fileID: 0}
     - target: {fileID: 8918964695843732660, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -899,6 +894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918964695843732661, guid: 0572a89339b6e6d468f678a51bd55abb,
+        type: 3}
+      propertyPath: m_Name
+      value: Health
       objectReference: {fileID: 0}
     - target: {fileID: 8918964696314975453, guid: 0572a89339b6e6d468f678a51bd55abb,
         type: 3}

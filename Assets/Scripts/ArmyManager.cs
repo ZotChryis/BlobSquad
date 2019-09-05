@@ -30,7 +30,13 @@ public class ArmyManager : MonoBehaviour
     [SerializeField]
     private List<Entity> Castles;
 
+    [SerializeField]
+    private GameObject cursor;
+
     private float currentSpacing;
+    private SpriteRenderer cursorSprite;
+
+    public Vector2 cursorDirection;
 
     public enum Troop
     {
@@ -47,6 +53,7 @@ public class ArmyManager : MonoBehaviour
     {
         currentSpacing = tightSpacing;
         m_instance = this;
+        cursorSprite = cursor.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -64,10 +71,20 @@ public class ArmyManager : MonoBehaviour
 
         // get current player location
         Vector2 playerPos = player.transform.position;
+
+        // WHen holding down right click, fake the player position (for the army) to be at cursor
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        cursorSprite.color = Color.white;
         if (Input.GetMouseButton(1))
         {
-            playerPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            playerPos = mouseWorldPosition;
+            cursorSprite.color = Color.red;
         }
+
+        // always put the cursor where the mouse is
+        mouseWorldPosition.z = player.transform.position.z;
+        cursor.transform.position = mouseWorldPosition;
+        cursorDirection = (mouseWorldPosition - player.transform.position).normalized;
 
         Entity[] army = this.gameObject.GetComponentsInChildren<Entity>();
         // get current army size

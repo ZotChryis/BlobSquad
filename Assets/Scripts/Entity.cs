@@ -172,8 +172,8 @@ public class Entity : MonoBehaviour
         lastAttackTime = Time.time;
         Attack attack = GameObject.Instantiate(this.AttackPrefab, transform).GetComponent<Attack>();
         attack.FriendlyAttack = this.isFriendly;
-        attack.direction = direction;
-        attack.facing = facing;
+        attack.direction = this.isFriendly ? ArmyManager.Get().cursorDirection: direction;
+        attack.facing = this.isFriendly ? ArmyManager.Get().cursorDirection : facing;
     }
 
     public void Die()

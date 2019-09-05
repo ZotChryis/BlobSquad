@@ -66,7 +66,7 @@ public class Player : Entity
 
         RigidBody.velocity = direction.normalized * gSpeed;
 
-        // do he atacc
+        // do the atatack
         if (canAttack && Input.GetButtonDown("Jump"))
         {
             Attack();
