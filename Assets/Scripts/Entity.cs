@@ -128,12 +128,12 @@ public class Entity : MonoBehaviour
             Vector2 offsetDirection = (targetLocation - position);
             Vector2 offset = offsetDirection.normalized * -1 * offsetDist;
 
-            if(lastSpeachTime > 2) Speak(""
-                // + "atkRange" + attackRange+"\n"
-                // + Mathf.Round(angle)+"\n"
-                + Mathf.Round(dist)+" away\n"
-                + "dist: " + Mathf.Round(offsetDist)+"\n"
-                ,1.5f);
+            // if(lastSpeachTime > 2) Speak(""
+            //     // + "atkRange" + attackRange+"\n"
+            //     // + Mathf.Round(angle)+"\n"
+            //     + Mathf.Round(dist)+" away\n"
+            //     + "dist: " + Mathf.Round(offsetDist)+"\n"
+            //     ,1.5f);
             destination = targetLocation + offset;
             // Debug.Log(offset);
         }
