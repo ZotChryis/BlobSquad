@@ -43,6 +43,8 @@ public class Entity : MonoBehaviour
     [SerializeField]
     protected string[] RecruitMessages;
     [SerializeField]
+    protected float dist;
+    [SerializeField]
     protected float attackRange;
 
     [SerializeField]
@@ -62,6 +64,8 @@ public class Entity : MonoBehaviour
     protected float lastAttackTime;
     protected bool canAttack;
 
+    public float lastSpeachTime;
+
     public void Start()
     {
         canAttack = true;
@@ -69,6 +73,7 @@ public class Entity : MonoBehaviour
         gHealth = Health;
         BarHealth.SetPercent(gHealth / Health);
         gCharisma = 0;
+        lastSpeachTime = float.MaxValue;
         if (BarCharisma != null)
         {
             BarCharisma.SetPercent(gCharisma / Charisma);
@@ -86,6 +91,7 @@ public class Entity : MonoBehaviour
 
     public void Update()
     {
+        lastSpeachTime += Time.deltaTime;
         if (gHealth <= 0) Die();
         // Tell everything if they can attack now
         if (!canAttack && Time.time - lastAttackTime >= AttackRate)
@@ -106,7 +112,7 @@ public class Entity : MonoBehaviour
 
         // Standard movement logic for all entities
         Vector2 position = this.transform.position;
-        float dist = 0;
+        dist = 0;
         direction = Vector2.zero;
 
         // targeting logic
@@ -116,10 +122,16 @@ public class Entity : MonoBehaviour
         else
         {
             Vector2 targetLocation = target.transform.position;
-            facing = Vector3.Normalize(targetLocation - position);
-            dist = Vector3.Distance(destination, position);
-            destination = targetLocation;
-            //facing*(dist - attackRange);
+            float angle = Vector2.SignedAngle(Vector2.up, targetLocation - position);
+            //using dist here but it gets reset later
+            dist = Vector3.Distance(targetLocation, position);
+            float prefDist = dist - attackRange;
+            if(lastSpeachTime > 2) Speak("atkRange"+attackRange+"\n"+Mathf.Round(angle)+"\n"+Mathf.Round(dist)+" away\ngoing for "+prefDist,1.5f);
+            float destX = Mathf.Sin(angle) * Mathf.Deg2Rad * prefDist;
+            float destY = Mathf.Cos(angle) * Mathf.Deg2Rad * prefDist;
+            Vector2 offset = new Vector2(destX, destY);
+            destination = targetLocation + offset;
+            // Debug.Log(offset);
         }
         // if you have a target that is alive, set destination to it's position
 
@@ -234,6 +246,7 @@ public class Entity : MonoBehaviour
         SpeechBubble.SetActive(true);
         SpeechText.text = text;
         StartCoroutine(StopSpeak(duration));
+        lastSpeachTime = 0;
     }
 
     public IEnumerator StopSpeak(float duration)

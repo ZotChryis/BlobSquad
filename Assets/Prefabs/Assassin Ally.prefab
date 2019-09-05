@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4443603010205610824, guid: ed7582916f06f714a8d61bf4c37431fe,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2040218984333476123, guid: ed7582916f06f714a8d61bf4c37431fe,
         type: 3}
       propertyPath: m_Sprite
