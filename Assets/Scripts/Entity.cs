@@ -124,12 +124,16 @@ public class Entity : MonoBehaviour
             Vector2 targetLocation = target.transform.position;
             float angle = Vector2.SignedAngle(Vector2.up, targetLocation - position);
             //using dist here but it gets reset later
-            dist = Vector3.Distance(targetLocation, position);
-            float prefDist = dist - attackRange;
-            if(lastSpeachTime > 2) Speak("atkRange"+attackRange+"\n"+Mathf.Round(angle)+"\n"+Mathf.Round(dist)+" away\ngoing for "+prefDist,1.5f);
-            float destX = Mathf.Sin(angle) * Mathf.Deg2Rad * prefDist;
-            float destY = Mathf.Cos(angle) * Mathf.Deg2Rad * prefDist;
-            Vector2 offset = new Vector2(destX, destY);
+            float offsetDist = attackRange - dist;
+            Vector2 offsetDirection = (targetLocation - position);
+            Vector2 offset = offsetDirection.normalized * -1 * offsetDist;
+
+            if(lastSpeachTime > 2) Speak(""
+                // + "atkRange" + attackRange+"\n"
+                // + Mathf.Round(angle)+"\n"
+                + Mathf.Round(dist)+" away\n"
+                + "dist: " + Mathf.Round(offsetDist)+"\n"
+                ,1.5f);
             destination = targetLocation + offset;
             // Debug.Log(offset);
         }
