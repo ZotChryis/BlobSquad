@@ -48,11 +48,9 @@ public class Attack : MonoBehaviour
         {   
             soundMgr.PlaySoundEffect(SoundManager.SoundEffect.AttackSword);
             float angle = Vector2.SignedAngle(Vector2.up, facing);
-            Debug.Log(angle);
             if (angle < 0) {
                 SpriteRenderer temp = gameObject.GetComponent<SpriteRenderer>();
                 temp.flipX = true;
-                Debug.Log("happened");
             }
             this.transform.Rotate(0,0,angle);
         }
